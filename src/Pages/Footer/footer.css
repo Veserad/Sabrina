@@ -1,0 +1,11 @@
+.blanco{
+    display: flex;
+}
+.envio, .cuotas, .seguro{
+    width: 33%;
+}
+.negro{
+    width: 100vw;  /* 100% del ancho del viewport */
+    background-color: black;
+    margin-left: calc(-50vw + 50%); /* quita el limite de ancho de pagina puesto en root-app.css*/
+}

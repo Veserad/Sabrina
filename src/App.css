@@ -1,0 +1,23 @@
+/* #root {
+    max-width: 70%;
+    display:inline-block;
+    justify-content: center;
+    margin: 0 ;
+    background-color: red;
+  } */
+.contenedor-main{
+    text-align: center;
+}
+body{
+    display:flex;
+    margin: 0 ;
+    justify-content: center;
+    /* max-width: 70%; */
+    /* background-color: red; */
+}
+
+#root {
+    max-width: 60%;
+    /* width: 100%; */
+    /* background-color: white; color para ver contraste si querés */
+  }
