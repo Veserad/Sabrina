@@ -1,0 +1,15 @@
+/* carrousel.css */
+.carousel-item{
+    height: 650px; /*ajusta el alto del carrusel*/
+}
+.carousel-item img {
+  width: 100%;
+  object-fit: cover; /* hace que la imagen se ajuste al tamaño del carrusel ; O 'contain' si no querés recorte */
+}
+
+.carousel {
+  width: 100vw;
+  height: 60%;
+  margin: 0 auto;
+  margin-left: calc(-50vw + 50%);
+}

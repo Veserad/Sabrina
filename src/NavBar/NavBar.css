@@ -1,0 +1,56 @@
+/* bg-body-tertiary */
+.barra{
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    position: fixed;
+    height: 90px;
+    background-color: white;
+     top: 30px;
+    z-index: 300;
+    /* transition: top 0.3s ease; */
+    /* width: 100%; */
+}
+.barra.scrolled {
+  top: 0; /* Se pega al top cuando se hace scroll */
+}
+.sabrina{
+    margin-right: 20%;
+}
+.active{
+    border-bottom: solid 1px;
+    border-top: solid 1px;
+}
+.Container{
+    color: aqua;
+}
+.derecha{
+    display: flex;
+}
+
+.fixed-navbar {
+     width: 100vw;
+    margin-left: calc(-50vw + 50%);
+   
+}
+.div-negro {
+  background-color: black;
+  height: 30px;
+  display: flex;
+  align-items: center;       /* Alinea vertical */
+  justify-content: center;   /* Alinea horizontal */
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+}
+
+.div-negro a {
+  color: white;
+  text-decoration: none;
+  font-size: 13px;
+  line-height: 1;
+  display: inline-block;
+}
+
+.div-negro a:hover {
+  text-decoration: underline;
+}

@@ -4,86 +4,138 @@ import Form from "react-bootstrap/Form";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
-import { Link } from "react-router";
+import { Link, useLocation } from "react-router-dom";
+import "./NavBar.css";
+import { useEffect, useState } from "react";
 function NavBar() {
+  const location = useLocation();
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 0);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
   return (
-    <Navbar expand="lg" className="bg-body-tertiary">
-      <Container fluid>
-        <Navbar.Brand href="#">SABRINA</Navbar.Brand>
-        <Navbar.Toggle aria-controls="navbarScroll" />
-        <Navbar.Collapse id="navbarScroll">
-          <Nav
-            className="me-auto my-2 my-lg-0"
-            style={{ maxHeight: "100px" }}
-            navbarScroll
-          >
-            <Nav.Link href="#action1">INICIO</Nav.Link>
-            <NavDropdown title="COLECCION" id="navbarScrollingDropdown">
-              <NavDropdown.Item href="#action3">
-                ABRIGOS & SACOS
-              </NavDropdown.Item>
-              <NavDropdown.Item href="#action3">CAMPERAS</NavDropdown.Item>
-              <NavDropdown.Item href="#action3">SASTRERIA</NavDropdown.Item>
-              <NavDropdown.Item href="#action3">TEJIDOS</NavDropdown.Item>
-              <NavDropdown.Item href="#action3">
-                SWEATERS & BUZOS
-              </NavDropdown.Item>
-              <NavDropdown.Item href="#action3">
-                CAMISAS & BLUSAS
-              </NavDropdown.Item>
-              <NavDropdown.Item href="#action3">REMERAS</NavDropdown.Item>
-              <NavDropdown.Item href="#action3">PANTALONES</NavDropdown.Item>
-              <NavDropdown.Item href="#action3">JEANS</NavDropdown.Item>
-              <NavDropdown.Item href="#action3">
-                VESTIDOS & MONOS
-              </NavDropdown.Item>
-              <NavDropdown.Item href="#action3">SPORTSWEAR</NavDropdown.Item>
-              <NavDropdown.Item href="#action3">FALDAS</NavDropdown.Item>
-              <NavDropdown.Item href="#action3">ACCESORIOS</NavDropdown.Item>
-              <NavDropdown.Item href="#action3">GIFT CARDS</NavDropdown.Item>
-              <NavDropdown.Item href="#action3">HOME</NavDropdown.Item>
-            </NavDropdown>
-            <Nav.Link as={Link} to={"/club-sabrina"}>
-              CLUB SABRINA
+    <div className="fixed-navbar">
+      <div className="div-negro">
+        <Link to="/productos">
+          ¡Envío gratis a partir de $130.000 y 6 cuotas sin interés! - ¡10$OFF
+          abonando con transferencia!
+        </Link>
+      </div>
+
+      <Navbar
+        expand="lg"
+        bg="none"
+        className={`barra ${scrolled ? "scrolled" : ""}`}
+      >
+        <Container fluid>
+          <div className="sabrina">
+            <Nav.Link as={Link} to={"/"}>
+              SABRINA
             </Nav.Link>
-            <Nav.Link as={Link} to={"/locales"}>
-              LOCALES
-            </Nav.Link>
-            <Nav.Link as={Link} to={"/preguntasfrecuentes"}>
-              INFO & TALLES
-            </Nav.Link>
-            <Nav.Link as={Link} to={"/quienes-somos"}>
-              QUIÉNES SOMOS
-            </Nav.Link>
-            <Nav.Link as={Link} to={"/contacto"}>
-              CONTACTO
-            </Nav.Link>
-            <NavDropdown title="Link" id="navbarScrollingDropdown">
-              <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
-              <NavDropdown.Item href="#action4">
-                Another action
-              </NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action5">
-                Something else here
-              </NavDropdown.Item>
-            </NavDropdown>
-            <Nav.Link href="#" disabled>
-              Link
-            </Nav.Link>
-          </Nav>
-          <Form className="d-flex">
-            <Form.Control
-              type="search"
-              placeholder="Buscar"
-              className="me-2"
-              aria-label="Search"
-            />
-            <Button variant="outline-success">Search</Button>
-          </Form>
-        </Navbar.Collapse>
-      </Container>
-    </Navbar>
+          </div>
+          <Navbar.Toggle aria-controls="navbarScroll" />
+          <Navbar.Collapse id="navbarScroll">
+            <Nav
+              className="me-auto my-2 my-lg-0"
+              style={{ maxHeight: "100px" }}
+              navbarScroll
+            >
+              <Nav.Link
+                as={Link}
+                to={"/"}
+                className={`${location.pathname === "/" ? "active" : ""}`}
+              >
+                INICIO
+              </Nav.Link>
+              <NavDropdown title="COLECCION" id="navbarScrollingDropdown">
+                <NavDropdown.Item href="#action3">
+                  ABRIGOS & SACOS
+                </NavDropdown.Item>
+                <NavDropdown.Item href="#action3">CAMPERAS</NavDropdown.Item>
+                <NavDropdown.Item href="#action3">SASTRERIA</NavDropdown.Item>
+                <NavDropdown.Item href="#action3">TEJIDOS</NavDropdown.Item>
+                <NavDropdown.Item href="#action3">
+                  SWEATERS & BUZOS
+                </NavDropdown.Item>
+                <NavDropdown.Item href="#action3">
+                  CAMISAS & BLUSAS
+                </NavDropdown.Item>
+                <NavDropdown.Item href="#action3">REMERAS</NavDropdown.Item>
+                <NavDropdown.Item href="#action3">PANTALONES</NavDropdown.Item>
+                <NavDropdown.Item href="#action3">JEANS</NavDropdown.Item>
+                <NavDropdown.Item href="#action3">
+                  VESTIDOS & MONOS
+                </NavDropdown.Item>
+                <NavDropdown.Item href="#action3">SPORTSWEAR</NavDropdown.Item>
+                <NavDropdown.Item href="#action3">FALDAS</NavDropdown.Item>
+                <NavDropdown.Item href="#action3">ACCESORIOS</NavDropdown.Item>
+                <NavDropdown.Item href="#action3">GIFT CARDS</NavDropdown.Item>
+                <NavDropdown.Item href="#action3">HOME</NavDropdown.Item>
+              </NavDropdown>
+              <Nav.Link
+                as={Link}
+                to={"/club-sabrina"}
+                className={`${
+                  location.pathname === "/club-sabrina" ? "active" : ""
+                }`}
+              >
+                CLUB SABRINA
+              </Nav.Link>
+              <Nav.Link
+                as={Link}
+                to={"/locales"}
+                className={`${
+                  location.pathname === "/locales" ? "active" : ""
+                }`}
+              >
+                LOCALES
+              </Nav.Link>
+              <Nav.Link
+                as={Link}
+                to={"/preguntasfrecuentes"}
+                className={`${
+                  location.pathname === "/preguntasfrecuentes" ? "active" : ""
+                }`}
+              >
+                INFO & TALLES
+              </Nav.Link>
+              <Nav.Link
+                as={Link}
+                to={"/quienes-somos"}
+                className={`${
+                  location.pathname === "/quienes-somos" ? "active" : ""
+                }`}
+              >
+                QUIÉNES SOMOS
+              </Nav.Link>
+              <Nav.Link
+                as={Link}
+                to={"/contacto"}
+                className={`${
+                  location.pathname === "/contacto" ? "active" : ""
+                }`}
+              >
+                CONTACTO
+              </Nav.Link>
+            </Nav>
+            <Form className="derecha">
+              <Form.Control
+                type="search"
+                placeholder="Buscar"
+                className="me-2"
+                aria-label="Search"
+              />
+              <Button variant="outline-success">Search</Button>
+            </Form>
+          </Navbar.Collapse>
+        </Container>
+      </Navbar>
+    </div>
   );
 }
 export default NavBar;
