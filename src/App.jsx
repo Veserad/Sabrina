@@ -10,12 +10,27 @@ import QuienesSomos from "./Pages/QuienesSomos";
 import Contacto from "./Pages/Contacto";
 import ScrollToTop from "./Components/ScrollToTop";
 import Productos from "./Pages/Productos";
+import { FaWhatsapp } from "react-icons/fa";
+import { Link } from "react-router-dom";
+import Button from "react-bootstrap/Button";
 
 function App() {
   return (
     <Router>
       <ScrollToTop />
       <NavBar />
+      <div className="whatsapp-folder">
+        <Button variant="">
+          <Link
+            to={
+              "https://api.whatsapp.com/send/?phone=5491161113461&text&type=phone_number&app_absent=0"
+            }
+            target="_blank"
+          >
+            <FaWhatsapp className="whatsapp" />
+          </Link>
+        </Button>
+      </div>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/club-sabrina" element={<ClubSabrina />} />

@@ -12,6 +12,7 @@ body{
     display:flex;
     margin: 0 ;
     justify-content: center;
+    margin-top: 120px;
 }
 
 #root {
@@ -23,4 +24,29 @@ html, body {
   /* overflow-y: scroll; */
   /* overflow-x: hidden; */
     /* height: 100%; */
+}
+.whatsapp-folder{
+  /* padding: 50px; */
+  background-color: rgb(54, 218, 54);
+  position: fixed;
+  bottom: 10px;
+  right: 30px;
+  height: 45px;
+  width: 45px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* display: inline-flex; */
+  /* justify-items: center;
+  align-items: center; */
+}
+.whatsapp{
+  font-size: 25px;
+  color: white;
+}
+.whatsapp-folder button{
+  text-decoration: none;
+  background-color: none;
+  border: none;
 }

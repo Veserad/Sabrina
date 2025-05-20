@@ -1,15 +1,20 @@
 import Button from "react-bootstrap/Button";
+import Dropdown from "react-bootstrap/Dropdown";
 import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import { Link, useLocation } from "react-router-dom";
+import { IoSearch } from "react-icons/io5";
+import { FaRegUser } from "react-icons/fa";
+import { MdOutlineShoppingCart } from "react-icons/md";
 import "./NavBar.css";
 import { useEffect, useState } from "react";
 function NavBar() {
   const location = useLocation();
   const [scrolled, setScrolled] = useState(false);
+  const [show, setShow] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -35,7 +40,7 @@ function NavBar() {
         <Container fluid>
           <div className="sabrina">
             <Nav.Link as={Link} to={"/"}>
-              SABRINA
+              S A B R I N A
             </Nav.Link>
           </div>
           <Navbar.Toggle aria-controls="navbarScroll" />
@@ -52,7 +57,14 @@ function NavBar() {
               >
                 INICIO
               </Nav.Link>
-              <NavDropdown title="COLECCION" id="navbarScrollingDropdown">
+              <NavDropdown
+                title="COLECCION"
+                id="navbarScrollingDropdown"
+                show={show}
+                onMouseEnter={() => setShow(true)}
+                onMouseLeave={() => setShow(false)}
+                className="coleccion"
+              >
                 <NavDropdown.Item href="#action3">
                   ABRIGOS & SACOS
                 </NavDropdown.Item>
@@ -124,13 +136,41 @@ function NavBar() {
               </Nav.Link>
             </Nav>
             <Form className="derecha">
-              <Form.Control
-                type="search"
-                placeholder="Buscar"
-                className="me-2"
-                aria-label="Search"
-              />
-              <Button variant="outline-success">Search</Button>
+              <div className="input-busqueda">
+                <Form.Control
+                  type="search"
+                  placeholder="Buscar"
+                  className="me-2"
+                  aria-label="Search"
+                />
+                <Button variant="" className="boton-busqueda">
+                  <IoSearch />
+                </Button>
+              </div>
+              <div className="botones-derecha">
+                <div>
+                  <Button variant="" className="boton-user user-icon">
+                    <Dropdown>
+                      <Dropdown.Toggle variant="" id="">
+                        <FaRegUser className="user-icon" />
+                      </Dropdown.Toggle>
+                      <Dropdown.Menu className="sesion-menu">
+                        <Dropdown.Item href="#/action-1" as={Link}>
+                          CREAR CUENTE
+                        </Dropdown.Item>
+                        <Dropdown.Item href="#/action-2" as={Link}>
+                          INICIAR SESIÓN
+                        </Dropdown.Item>
+                      </Dropdown.Menu>
+                    </Dropdown>
+                  </Button>
+                </div>
+                <div className="">
+                  <Button variant="" className="boton-carrito">
+                    <MdOutlineShoppingCart />
+                  </Button>
+                </div>
+              </div>
             </Form>
           </Navbar.Collapse>
         </Container>
