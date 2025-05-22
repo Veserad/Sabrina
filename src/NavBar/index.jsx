@@ -15,6 +15,7 @@ function NavBar() {
   const location = useLocation();
   const [scrolled, setScrolled] = useState(false);
   const [show, setShow] = useState(false);
+  const [show2, setShow2] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -150,7 +151,11 @@ function NavBar() {
               <div className="botones-derecha">
                 <div>
                   <Button variant="" className="boton-user user-icon">
-                    <Dropdown>
+                    <Dropdown
+                      show={show2}
+                      onMouseEnter={() => setShow2(true)}
+                      onMouseLeave={() => setShow2(false)}
+                    >
                       <Dropdown.Toggle variant="" id="">
                         <FaRegUser className="user-icon" />
                       </Dropdown.Toggle>

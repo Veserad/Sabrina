@@ -1,0 +1,41 @@
+.fondo{
+    justify-content: center;
+    display: flex;
+    justify-content: center !important;
+}
+.fondo  input{
+    border: 1px solid black;
+    height: 40px;
+    width: 550px;
+}
+.fondo input::placeholder{
+    color: rgb(206, 203, 203);
+    margin: 20px;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+a:hover{
+    text-decoration: underline;
+}
+.negrita{
+    font-weight: 700;
+}
+.centrar{
+    display: flex;
+    justify-content: center;
+}
+.gap-2{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.btn:disabled{
+    background-color: rgb(211, 207, 207);
+    border-radius: 0;
+    border: none;
+}
+.btn{
+    border-radius: 1px;
+}
