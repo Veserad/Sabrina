@@ -56,40 +56,26 @@ function Footer() {
               <h6>NAVEGACIÓN</h6>
             </li>
             <li>
-              <a>
-                <Link to={"/"}>Inicio</Link>
-              </a>
+              <Link to={"/"}>Inicio</Link>
             </li>
             <li>
-              <a>
-                <Link to={"/productos"}>Colección</Link>
-              </a>
+              <Link to={"/productos"}>Colección</Link>
             </li>
             <li>
               {" "}
-              <a>
-                <Link to={"/club-sabrina"}>Club Sabrina</Link>
-              </a>
+              <Link to={"/club-sabrina"}>Club Sabrina</Link>
             </li>
             <li>
-              <a>
-                <Link to={"/locales"}>Locales</Link>
-              </a>
+              <Link to={"/locales"}>Locales</Link>
             </li>
             <li>
-              <a>
-                <Link to={"/preguntasfrecuentes"}>Info & Talles</Link>
-              </a>
+              <Link to={"/preguntasfrecuentes"}>Info & Talles</Link>
             </li>
             <li>
-              <a>
-                <Link to={"/quienes-somos"}>Quiénes Somos</Link>
-              </a>
+              <Link to={"/quienes-somos"}>Quiénes Somos</Link>
             </li>
             <li>
-              <a>
-                <Link to={"/contacto"}>Contacto</Link>
-              </a>
+              <Link to={"/contacto"}>Contacto</Link>
             </li>
           </ul>
         </div>

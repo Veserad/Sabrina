@@ -19,39 +19,39 @@ import Registro from "./Pages/Register";
 
 function App() {
   return (
-    <GoogleReCaptchaProvider
-      type="v2-checkbox"
-      siteKey="6LdBmEUrAAAAAI4DxHkIHnh3PCFUcdloqw16MuHE"
-    >
-      <Router>
-        <ScrollToTop />
-        <NavBar />
-        <div className="whatsapp-folder">
-          <Button variant="">
-            <Link
-              to={
-                "https://api.whatsapp.com/send/?phone=5491161113461&text&type=phone_number&app_absent=0"
-              }
-              target="_blank"
-            >
-              <FaWhatsapp className="whatsapp" />
-            </Link>
-          </Button>
-        </div>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/club-sabrina" element={<ClubSabrina />} />
-          <Route path="/locales" element={<Locales />} />
-          <Route path="/preguntasfrecuentes" element={<InfoYTalles />} />
-          <Route path="/quienes-somos" element={<QuienesSomos />} />
-          <Route path="/contacto" element={<Contacto />} />
-          <Route path="/productos" element={<Productos />} />
-          <Route path="/account/login" element={<Login />} />
-          <Route path="/account/register" element={<Registro />} />
-        </Routes>
-        <Footer />
-      </Router>
-    </GoogleReCaptchaProvider>
+    // <GoogleReCaptchaProvider
+    //   type="v2-checkbox"
+    //   siteKey="6LdBmEUrAAAAAI4DxHkIHnh3PCFUcdloqw16MuHE"
+    // >
+    <Router>
+      <ScrollToTop />
+      <NavBar />
+      <div className="whatsapp-folder">
+        <Button variant="">
+          <Link
+            to={
+              "https://api.whatsapp.com/send/?phone=5491161113461&text&type=phone_number&app_absent=0"
+            }
+            target="_blank"
+          >
+            <FaWhatsapp className="whatsapp" />
+          </Link>
+        </Button>
+      </div>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/club-sabrina" element={<ClubSabrina />} />
+        <Route path="/locales" element={<Locales />} />
+        <Route path="/preguntasfrecuentes" element={<InfoYTalles />} />
+        <Route path="/quienes-somos" element={<QuienesSomos />} />
+        <Route path="/contacto" element={<Contacto />} />
+        <Route path="/productos" element={<Productos />} />
+        <Route path="/account/login" element={<Login />} />
+        <Route path="/account/register" element={<Registro />} />
+      </Routes>
+      <Footer />
+    </Router>
+    // </GoogleReCaptchaProvider>
   );
 }
 

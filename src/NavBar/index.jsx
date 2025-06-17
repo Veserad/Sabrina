@@ -150,25 +150,34 @@ function NavBar() {
               </div>
               <div className="botones-derecha">
                 <div>
-                  <Button variant="" className="boton-user user-icon">
-                    <Dropdown
-                      show={show2}
-                      onMouseEnter={() => setShow2(true)}
-                      onMouseLeave={() => setShow2(false)}
-                    >
-                      <Dropdown.Toggle variant="" id="">
-                        <FaRegUser className="user-icon" />
-                      </Dropdown.Toggle>
-                      <Dropdown.Menu className="sesion-menu">
-                        <Dropdown.Item href="#/action-1" as={Link}>
-                          CREAR CUENTE
-                        </Dropdown.Item>
-                        <Dropdown.Item href="#/action-2" as={Link}>
-                          INICIAR SESIÓN
-                        </Dropdown.Item>
-                      </Dropdown.Menu>
-                    </Dropdown>
-                  </Button>
+                  {/* <Button variant="" className="boton-user user-icon"> */}
+                  <Dropdown
+                    show={show2}
+                    id="navbarScrollingDropdown2"
+                    onMouseEnter={() => setShow2(true)}
+                    onMouseLeave={() => setShow2(false)}
+                  >
+                    <Dropdown.Toggle variant="" id="">
+                      <FaRegUser className="user-icon" />
+                    </Dropdown.Toggle>
+                    <Dropdown.Menu className="sesion-menu">
+                      <Dropdown.Item
+                        href="#/action-1"
+                        as={Link}
+                        to={"/account/register"}
+                      >
+                        CREAR CUENTA
+                      </Dropdown.Item>
+                      <Dropdown.Item
+                        href="#/action-2"
+                        as={Link}
+                        to={"/account/login"}
+                      >
+                        INICIAR SESIÓN
+                      </Dropdown.Item>
+                    </Dropdown.Menu>
+                  </Dropdown>
+                  {/* </Button> */}
                 </div>
                 <div className="">
                   <Button variant="" className="boton-carrito">

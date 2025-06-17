@@ -8,11 +8,11 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 
 function Registro() {
-  const [captchaVerificado, setCaptchaVerificado] = useState(false);
+  // const [captchaVerificado, setCaptchaVerificado] = useState(false);
   const onsubmit = async (data) => {
     try {
       const response = await create(data);
-      setCaptchaVerificado(false);
+      // setCaptchaVerificado(false);
       console.log(response);
     } catch (e) {
       console.log(e);
@@ -24,7 +24,7 @@ function Registro() {
     watch,
     formState: { errors },
   } = useForm("mode:onChange");
-  const clave = watch("clave");
+  const clave = watch("contraseña");
   return (
     <>
       <p style={{ margin: "0" }}>
@@ -54,7 +54,7 @@ function Registro() {
             <Form.Control
               type="email"
               placeholder="ej: tunombre@email.com"
-              {...register("correo", { required: true })}
+              {...register("email", { required: true })}
             />
           </Form.Group>
           <Form.Group className="mb-3" controlId="formGroupPhone">
@@ -73,20 +73,20 @@ function Registro() {
             <Form.Control
               type="password"
               placeholder=""
-              {...register("clave", {
+              {...register("contraseña", {
                 required: true,
-                maxLength: "12",
+                maxLength: "18",
                 minLength: "6",
               })}
             />
-            {errors?.clave?.type === "required" && (
+            {errors?.contraseña?.type === "required" && (
               <span>La contraseña es obligatoria</span>
             )}
-            {errors?.clave?.type === "minLength" && (
+            {errors?.contraseña?.type === "minLength" && (
               <span>La contraseña debe tener al menos 6 caracteres</span>
             )}
-            {errors?.clave?.type === "maxLength" && (
-              <span>La contraseñaa no debe tener mas de 12 caracteres</span>
+            {errors?.contraseña?.type === "maxLength" && (
+              <span>La contraseñaa no debe tener mas de 18 caracteres</span>
             )}
           </Form.Group>
           <Form.Group className="mb-3" controlId="formGroupPassword2">
@@ -94,38 +94,38 @@ function Registro() {
             <Form.Control
               type="password"
               placeholder=""
-              {...register("clave2", {
+              {...register("contraseña2", {
                 required: true,
-                maxLength: "12",
+                maxLength: "18",
                 minLength: "6",
                 validate: (value) => value === clave,
               })}
             />
-            {errors?.clave2?.type === "required" && (
+            {errors?.contraseña2?.type === "required" && (
               <span>La contraseña es obligatoria</span>
             )}
             {errors?.clave2?.type === "minLength" && (
               <span>La contraseña debe tener al menos 6 caracteres</span>
             )}
-            {errors?.clave2?.type === "maxLength" && (
-              <span>La contraseñaa no debe tener mas de 12 caracteres</span>
+            {errors?.contraseña2?.type === "maxLength" && (
+              <span>La contraseñaa no debe tener mas de 18 caracteres</span>
             )}
-            {errors?.clave2?.type === "validate" && (
+            {errors?.contraseña2?.type === "validate" && (
               <span>Las contraseñas no coinciden</span>
             )}
           </Form.Group>
 
-          <GoogleReCaptchaCheckbox
+          {/* <GoogleReCaptchaCheckbox
             className="centrar"
             onChange={() => setCaptchaVerificado(true)}
-          />
+          /> */}
 
           <div className="d-grid gap-2">
             <Button
               variant="dark"
               size="lg"
               type="submit"
-              disabled={!captchaVerificado}
+              // disabled={!captchaVerificado}
             >
               CREAR CUENTA
             </Button>
