@@ -13,12 +13,12 @@ function ButtonSpinner({ variant, type, loading, label }) {
         />
         <span className="visually-hidden">Loading...</span>
       </Button> */}
-      <Button type={type} variant={variant} disabled={loading}>
+      <Button type={type} variant={variant} disabled={loading} size="lg">
         {loading && (
           <Spinner
             as="span"
             animation="grow"
-            size="sm"
+            size="lg"
             role="status"
             aria-hidden="true"
           />

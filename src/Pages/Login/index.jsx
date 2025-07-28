@@ -7,9 +7,13 @@ import { useContext } from "react";
 import ButtonSpinner from "../../Components/spinner";
 import { AuthContext } from "../../Context/authContext";
 import AlertNavigation from "../../Components/AlertNavigation";
+import "../Register/register.css"; // Assuming you have some styles in this file
+import { Link } from "react-router-dom";
+import Input from "../Register/input";
 
 function Login() {
   const [loading, setLoading] = useState(false);
+  const [verClave, setVerClave] = useState(false);
   const [alertNavigation, setAlertNavigation] = useState({
     message: "",
     variant: "",
@@ -43,40 +47,63 @@ function Login() {
     formState: { errors },
   } = useForm();
   return (
-    <Form onSubmit={handleSubmit(onSubmit)}>
-      <Form.Group className="mb-3" controlId="formGroupEmail">
-        <Form.Label>EMAIL</Form.Label>
-        <Form.Control
-          type="email"
-          placeholder="Enter email"
-          {...register("email")}
-        />
-      </Form.Group>
-      <Form.Group className="mb-3" controlId="formGroupPassword">
-        <Form.Label>CONTRASEÑA</Form.Label>
-        <Form.Control
-          type="password"
-          placeholder="Password"
-          {...register("contraseña")}
-        />
-      </Form.Group>
-      <p>¿Olvidaste tu contraseña?</p>
-      <div className="d-grid gap-2">
-        <Button variant="dark" size="lg" type="submit">
-          Conectarse
-        </Button>
-      </div>
-      <p>
-        ¿No tenés una cuenta? <span>Crear cuenta</span>
+    <>
+      <p style={{ margin: "0" }}>
+        <Link to={"/"}>Inicio</Link> / {""}
+        <Link to={"/account"}>Mi Cuenta</Link> {"/ "}
+        <span className="negrita">Crear Cuenta</span>
       </p>
-      <ButtonSpinner
-        label="Ingresar"
-        type="submit"
-        variant="primary"
-        loading={loading}
-      />
-      <AlertNavigation {...alertNavigation} />
-    </Form>
+      <div className="fondo">
+        <Form onSubmit={handleSubmit(onSubmit)}>
+          <Input
+            title="EMAIL"
+            placeholder="Ingrese su correo electrónico"
+            type="email"
+            register={{ ...register("email", { required: true }) }}
+            errrors={errors}
+            name="email"
+          />
+          <Input
+            title="CONTRASEÑA"
+            placeholder="Ingrese su contraseña"
+            type={verClave ? "text" : "password"}
+            register={{ ...register("contraseña", { required: true }) }}
+            errors={errors}
+            name="contraseña"
+            style={{ position: "relative" }}
+          >
+            <span
+              onClick={() => setVerClave(!verClave)}
+              style={{
+                position: "absolute",
+                right: "10px",
+                top: "50%",
+                transform: "translateY(-50%)",
+                cursor: "pointer",
+                fontSize: "0.9rem",
+                color: "#555",
+              }}
+            >
+              {verClave ? "🙈" : "👁️"}
+            </span>
+          </Input>
+          <p>¿Olvidaste tu contraseña?</p>
+          <div className="d-grid gap-2">
+            <ButtonSpinner
+              size="lg"
+              label="Conectarse"
+              type="submit"
+              variant="dark"
+              loading={loading}
+            />
+          </div>
+          <p>
+            ¿No tenés una cuenta? <span>Crear cuenta</span>
+          </p>
+          <AlertNavigation {...alertNavigation} />
+        </Form>
+      </div>
+    </>
   );
 }
 

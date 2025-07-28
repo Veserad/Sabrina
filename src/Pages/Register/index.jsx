@@ -2,19 +2,38 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import { useForm } from "react-hook-form";
 import { create } from "../../Utils/authServices";
-import { GoogleReCaptchaCheckbox } from "@google-recaptcha/react";
 import "./register.css";
-import { useState } from "react";
 import { Link } from "react-router-dom";
+import Input from "./input";
+import { useState } from "react";
+import AlertNavigation from "../../Components/AlertNavigation";
+import ButtonSpinner from "../../Components/spinner";
 
 function Registro() {
-  // const [captchaVerificado, setCaptchaVerificado] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [verClave, setVerClave] = useState(false);
+  const [alertNavigation, setAlertNavigation] = useState({
+    message: "",
+    variant: "",
+  });
   const onsubmit = async (data) => {
+    setLoading(true);
     try {
       const response = await create(data);
-      // setCaptchaVerificado(false);
+      setLoading(false);
+      setAlertNavigation({
+        message: "Tu usuario ha sido registrado, serás redirigiado al Login",
+        variant: "success",
+        duration: 3300,
+        link: "/account/login",
+      });
       console.log(response);
     } catch (e) {
+      setAlertNavigation({
+        message: registroErrorMEssage[e.code] || "Ha ocurrido un error",
+        variant: "danger",
+      });
+      setLoading(false);
       console.log(e);
     }
   };
@@ -38,47 +57,56 @@ function Registro() {
             Comprá más rápido y llevá el control de tus pedidos, ¡en un solo
             lugar!
           </p>
-          <Form.Group className="mb-3" controlId="formGroupName">
-            <Form.Label>Nombre</Form.Label>
-            <Form.Control
-              type="text"
-              placeholder="ej: Sergio Ruiz Diaz"
-              {...register("nombre", { required: true })}
-            />
-            {errors?.nombre?.type === "required" && (
-              <span>Este campo es obligatorio</span>
-            )}
-          </Form.Group>
-          <Form.Group className="mb-3" controlId="formGroupEmail">
-            <Form.Label>EMAIL</Form.Label>
-            <Form.Control
-              type="email"
-              placeholder="ej: tunombre@email.com"
-              {...register("email", { required: true })}
-            />
-          </Form.Group>
-          <Form.Group className="mb-3" controlId="formGroupPhone">
-            <Form.Label>TELÉFONO (OPCIONAL)</Form.Label>
-            <Form.Control
-              type="text"
-              placeholder="ej: 1123445567"
-              {...register("telefono", { maxLength: "10" })}
-            />
-            {errors?.telefono?.type === "maxLength" && (
-              <span>El número de teléfono no debe exceder los 10 dígitos</span>
-            )}
-          </Form.Group>
-          <Form.Group className="mb-3" controlId="formGroupPassword">
-            <Form.Label>CONTRASEÑA</Form.Label>
-            <Form.Control
-              type="password"
-              placeholder=""
-              {...register("contraseña", {
+          <Input
+            title="NOMBRE"
+            placeholder="ej: Sergio Ruiz Diaz"
+            register={{ ...register("nombre", { required: true }) }}
+            errors={errors}
+            name="nombre"
+          />
+          <Input
+            title="EMAIL"
+            placeholder="ej: tunombre@email.com"
+            register={{ ...register("email", { required: true }) }}
+            errors={errors}
+            name="email"
+          />
+          <Input
+            title="TELÉFONO (OPCIONAL)"
+            placeholder="ej 1234567890"
+            register={{ ...register("telefono", { required: false }) }}
+            errors={errors}
+            name="telefono"
+          />
+          <Input
+            title="CONTRASEÑA"
+            type={verClave ? "text" : "password"}
+            placeholder=""
+            register={{
+              ...register("contraseña", {
                 required: true,
-                maxLength: "18",
-                minLength: "6",
-              })}
-            />
+                maxLength: 18,
+                minLength: 6,
+              }),
+            }}
+            errors={errors}
+            name="contraseña"
+            style={{ position: "relative" }}
+          >
+            <span
+              onClick={() => setVerClave(!verClave)}
+              style={{
+                position: "absolute",
+                right: "10px",
+                top: "50%",
+                transform: "translateY(-50%)",
+                cursor: "pointer",
+                fontSize: "0.9rem",
+                color: "#555",
+              }}
+            >
+              {verClave ? "🙈" : "👁️"}
+            </span>
             {errors?.contraseña?.type === "required" && (
               <span>La contraseña es obligatoria</span>
             )}
@@ -86,25 +114,26 @@ function Registro() {
               <span>La contraseña debe tener al menos 6 caracteres</span>
             )}
             {errors?.contraseña?.type === "maxLength" && (
-              <span>La contraseñaa no debe tener mas de 18 caracteres</span>
+              <span>La contraseña no debe tener más de 18 caracteres</span>
             )}
-          </Form.Group>
-          <Form.Group className="mb-3" controlId="formGroupPassword2">
-            <Form.Label>CONFIRMAR CONTRASEÑA</Form.Label>
-            <Form.Control
-              type="password"
-              placeholder=""
-              {...register("contraseña2", {
+          </Input>
+          <Input
+            title="CONFIRMAR CONTRASEÑA"
+            placeholder=""
+            type="password"
+            register={{
+              ...register("contraseña2", {
                 required: true,
-                maxLength: "18",
-                minLength: "6",
+                minLength: 6,
+                maxLength: 18,
                 validate: (value) => value === clave,
-              })}
-            />
+              }),
+            }}
+          >
             {errors?.contraseña2?.type === "required" && (
               <span>La contraseña es obligatoria</span>
             )}
-            {errors?.clave2?.type === "minLength" && (
+            {errors?.contraseña2?.type === "minLength" && (
               <span>La contraseña debe tener al menos 6 caracteres</span>
             )}
             {errors?.contraseña2?.type === "maxLength" && (
@@ -113,23 +142,17 @@ function Registro() {
             {errors?.contraseña2?.type === "validate" && (
               <span>Las contraseñas no coinciden</span>
             )}
-          </Form.Group>
-
-          {/* <GoogleReCaptchaCheckbox
-            className="centrar"
-            onChange={() => setCaptchaVerificado(true)}
-          /> */}
-
+          </Input>
           <div className="d-grid gap-2">
-            <Button
-              variant="dark"
+            <ButtonSpinner
               size="lg"
+              label="CREAR CUENTA"
               type="submit"
-              // disabled={!captchaVerificado}
-            >
-              CREAR CUENTA
-            </Button>
+              variant="dark"
+              loading={loading}
+            />
           </div>
+          <AlertNavigation {...alertNavigation} />
           <p className="centrar">
             ¿Ya tenés una cuenta?{""}
             <span className="negrita">
