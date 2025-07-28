@@ -1,5 +1,5 @@
 import CarouselHome from "../../CarouselHome";
-import "./Home.css"; // Assuming you have a CSS file for styling
+import "./home.css"; // Assuming you have a CSS file for styling
 import { Link } from "react-router-dom";
 
 function Home() {
