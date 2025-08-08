@@ -1,6 +1,7 @@
 {
   "name": "sabrina",
   "private": true,
+  "homepage": "https://veserad.github.io/Sabrina",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
