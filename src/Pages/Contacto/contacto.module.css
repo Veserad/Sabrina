@@ -1,0 +1,45 @@
+.contactoPage{
+    display: flex;
+    justify-content: space-between;
+    /* background-color: aqua; */
+}
+.contactos{
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+    margin-top: 20px;
+    /* background-color: red; */
+}
+.formulario{
+    /* background-color: yellow; */
+    width: 50%;
+}
+.icons{
+    size:600px;
+    margin:10px
+}
+.contacto2{
+    margin-right: 20%;
+}
+.formulario input{
+    width: 100%;
+    height: 40px;
+    border: 1px solid rgb(177, 165, 165);
+    outline: none;
+    margin-top: 10PX;
+}
+input.mensaje{
+    height: 100px;
+}
+.formulario label{
+    margin-top:10px
+}
+.formulario textarea{
+    outline: none;
+    width: 100%;
+    height: 100px;
+    MARGIN-TOP:10PX
+}
+textarea:focus, input:focus{
+    border-color: rgb(8, 235, 235);
+}

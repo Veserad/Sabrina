@@ -1,56 +1,63 @@
+import { Link } from "react-router-dom";
 function Locales() {
   return (
     <div>
-      <h4>NUESTROS LOCALES/</h4>
-      <h6>CABA. BUENOS AIRES/</h6>
       <div>
-        <h6>Av. Diaz Velez 5216</h6>
+        <p style={{ fontSize: "20px" }}>
+          <Link>Inicio</Link> /{" "}
+          <span style={{ fontWeight: "bold" }}>Locales</span>
+        </p>
+      </div>
+      <h4>NUESTROS LOCALES/</h4>
+      <h6 style={{ fontWeight: "bold" }}>CABA. BUENOS AIRES/</h6>
+      <div>
+        <h6 style={{ fontWeight: "bold" }}>Av. Diaz Velez 5216</h6>
         <div> Lunes a Viernes de 10:00 a 19:45 hs.</div>
         <p>Sábados de 10:00 a 19:00 hs. - 4982-0868 / 1130481163</p>
       </div>
       <div>
-        <h6>Av. Santa Fe 2210</h6>
+        <h6 style={{ fontWeight: "bold" }}>Av. Santa Fe 2210</h6>
         <div>Lunes a Sábados de 10:00 a 19:30 hs. </div>
         <div>-</div>
         <div>1130481152</div>
       </div>
       <div>
-        <h6> Av. Corrientes 1394</h6>
+        <h6 style={{ fontWeight: "bold" }}> Av. Corrientes 1394</h6>
         <div>Lunes a Sábados de 09:30 a 19:45 hs.</div>{" "}
         <div>Domingos de 12:00 a 18:00 hs.</div> <div> -</div>{" "}
         <div>4371-3450 / 1130481161</div>
       </div>
       <div>
-        <h6>Av. Forest 371</h6>
+        <h6 style={{ fontWeight: "bold" }}>Av. Forest 371</h6>
         <div>Lunes a Viernes de 10:00 a 17:45 hs. (Martes hasta 16:30 hs)</div>
         <div>Sábados de 10:00 a 13.45 hs.</div>
         <div>-</div>
         <div>4554-2680 (pedir con local)</div>
       </div>
       <div>
-        <h6>Av. Cordoba 1810</h6>
+        <h6 style={{ fontWeight: "bold" }}>Av. Cordoba 1810</h6>
         <div>Lunes a Viernes de 09:30 a 20:00 hs.</div>
         <div>Sábados de 10:00 a 19 hs.</div>
         <div>-</div>
         <div>4813-7602 / 1130481159</div>
       </div>
       <div>
-        <h6>Sarmiento 999</h6>
+        <h6 style={{ fontWeight: "bold" }}>Sarmiento 999</h6>
         <div>Lunes a Viernes de 09:30 a 19:00 hs.</div>
         <div>Sábados de 10:00 a 19 hs.</div>
         <div>-</div>
         <div>4327-2309 / 1130481157</div>
       </div>
       <div>
-        <h6>Av. Roque Sáenz Peña 1195</h6>
+        <h6 style={{ fontWeight: "bold" }}>Av. Roque Sáenz Peña 1195</h6>
         <div>Lunes a Viernes de 10:00 a 18:30 hs.</div>
         <div>Sábados de 10:30 a 16:00 hs</div>
         <div>-</div>
         <div>11 3048-1162 / 1130481162</div>
       </div>
-      <h6>MAR DEL PLATA /</h6>
+      <h6 style={{ fontWeight: "bold" }}>MAR DEL PLATA /</h6>
       <div>
-        <h6>Av. Rivadavia 2499</h6>
+        <h6 style={{ fontWeight: "bold" }}>Av. Rivadavia 2499</h6>
         <div>Lunes a Sábados de 11:00 a 18:30 hs.</div>
         <div>-</div>
         <div>0223-491-5307 / 1130481151</div>

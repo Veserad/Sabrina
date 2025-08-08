@@ -1,7 +1,14 @@
+import { Link } from "react-router-dom";
 function QuienesSomos() {
   return (
     <div>
-      <h4>LA HISTORIA</h4>
+      <div>
+        <p style={{ fontSize: "20px" }}>
+          <Link>Inicio</Link> /{" "}
+          <span style={{ fontWeight: "bold" }}>Quiénes somos</span>
+        </p>
+      </div>
+      <h2 style={{ fontWeight: "bold" }}>LA HISTORIA</h2>
       <div>
         Olivos, pcia. de Buenos Aires. Junio de 1965. Un garage de 20 m2. Una
         familia dedicada a la fabricación de indumentaria y la admiración por la
@@ -12,7 +19,7 @@ function QuienesSomos() {
         con el tiempo, la empresa crece día a día, con una fábrica modelo y
         numerosos locales en todo el país.
       </div>
-      <h4>EL ESPÍRITU</h4>
+      <h2 style={{ fontWeight: "bold" }}>EL ESPÍRITU</h2>
       <p>
         Acompañamos a todas las mujeres en su vida cotidiana. Diseñamos prendas
         cálidas, diversas, cómodas, versátiles como cada mujer que nos inspira.

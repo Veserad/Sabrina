@@ -1,8 +1,15 @@
+import { Link } from "react-router-dom";
 function InfoYTalles() {
   return (
     <div>
       <div>
-        <h6>¿Cómo hago para comprar?</h6>
+        <p style={{ fontSize: "20px" }}>
+          <Link>Inicio</Link> /{" "}
+          <span style={{ fontWeight: "bold" }}>Preguntas Frecuentes</span>
+        </p>
+      </div>
+      <div>
+        <h6 style={{ fontWeight: "bold" }}>¿Cómo hago para comprar?</h6>
         <ol>
           <li>
             Navegá por las categorías y hacé click sobre el producto que te
@@ -52,7 +59,7 @@ function InfoYTalles() {
             cualquier duda contactarse a consultas@sabrina.com.ar.
           </li>
         </ol>
-        <h6>Cómo se cuál es mi talle?</h6>
+        <h6 style={{ fontWeight: "bold" }}>Cómo se cuál es mi talle?</h6>
         <p>
           En la descripción de cada producto podés hacer click en Guía de
           talles, también podés averiguar cuál es tu talle en la siguiente Guía
@@ -71,7 +78,9 @@ function InfoYTalles() {
           exacta de todas las prendas, pues hay distintos cortes! Ante cualquier
           inquietud o consulta no dudes en contactarnos así te ayudamos!
         </p>
-        <h6>¿Qué formas de pago puedo aprovechar para realizar mi compra?</h6>
+        <h6 style={{ fontWeight: "bold" }}>
+          ¿Qué formas de pago puedo aprovechar para realizar mi compra?
+        </h6>
         <p>Disponemos de los siguientes medios de pago:</p>
         <div>
           <img
@@ -132,20 +141,20 @@ function InfoYTalles() {
           />
         </div>
         <br />
-        <h6>¿Hay cuotas sin interés?</h6>
+        <h6 style={{ fontWeight: "bold" }}>¿Hay cuotas sin interés?</h6>
         <p>
           Podes abonar en hasta 3 cuotas sin interés con cualquier tarjeta
           bancaria en nuestra tienda online. Las cuotas en tiendas físicas
           pueden variar.
         </p>
-        <h6>¿Cuál es el costo de envío?</h6>
+        <h6 style={{ fontWeight: "bold" }}>¿Cuál es el costo de envío?</h6>
         <p>
           El costo de envío será mostrado en base al total de la compra y
           ubicación, en el checkout, en el momento previo a la compra! Para que
           sepas, si la compra supera los $160.000, el envío corre por cuenta
           nuestra (en caso de cambios los envios son a cuenta del cliente)!
         </p>
-        <h6>¿Cómo se realizan los envíos?</h6>
+        <h6 style={{ fontWeight: "bold" }}>¿Cómo se realizan los envíos?</h6>
         <p>Trabajamos con:</p>
         <img
           src="https://d26lpennugtm8s.cloudfront.net/assets/common/img/logos/shipping/ar/oca@2x.png"
@@ -153,12 +162,14 @@ function InfoYTalles() {
         />
         <br />
         <br />
-        <h6>¿Dónde puedo recibir mi pedido?</h6>
+        <h6 style={{ fontWeight: "bold" }}>¿Dónde puedo recibir mi pedido?</h6>
         <p>
           Realizamos envíos a todo el país! También tenes la opción de comprar y
           retirar en nuestros locales!
         </p>
-        <h6>¿Cuánto tarda en llegar el pedido?</h6>
+        <h6 style={{ fontWeight: "bold" }}>
+          ¿Cuánto tarda en llegar el pedido?
+        </h6>
         <p>
           El tiempo de entrega dependerá del tipo de envío seleccionado. En
           general la demora se encuentra entre 3 y 7 días hábiles luego de
@@ -175,7 +186,9 @@ function InfoYTalles() {
           coordinadas con cada cliente en forma particular por lo general a las
           24hrs/72hrs hábiles.
         </p>
-        <h6>¿Cuál es el plazo para realizar un cambio?</h6>
+        <h6 style={{ fontWeight: "bold" }}>
+          ¿Cuál es el plazo para realizar un cambio?
+        </h6>
         <p>
           Puedes solicitar un cambio hasta 10 días luego de realizada la compra.
           Podes acercarte a cualquiera de nuestras sucursales o realizarlo
@@ -183,7 +196,9 @@ function InfoYTalles() {
           corresponden a ser abonados por el cliente). No se realizan
           devoluciones de dinero.
         </p>
-        <h6>¿Qué sucede si no hay stock del producto que compre?</h6>
+        <h6 style={{ fontWeight: "bold" }}>
+          ¿Qué sucede si no hay stock del producto que compre?
+        </h6>
         <p>
           En ese caso nos pondremos en contacto para dar solución. El cliente
           puede optar por la devolución parcial/total de la compra o por el
@@ -191,13 +206,15 @@ function InfoYTalles() {
           hara devolucion parcial y en caso de ser mayor se debera abonar la
           diferencia).
         </p>
-        <h6>¿Qué debo hacer si el producto no llega en buen estado?</h6>
+        <h6 style={{ fontWeight: "bold" }}>
+          ¿Qué debo hacer si el producto no llega en buen estado?
+        </h6>
         <p>
           Ponte en contacto con nosotros a consultas@sabrina.com.ar indicando el
           número de pedido y motivos por los que queres ralizar el
           cambio/devolucion y te indicaremos los pasos a seguir.
         </p>
-        <h6>¿Querés vender SABRINA?</h6>
+        <h6 style={{ fontWeight: "bold" }}>¿Querés vender SABRINA?</h6>
         <p>
           Por compras mayoristas // franquicias, solicitar información a
           consultas@sabrina.com.ar o deja los datos aquí.
@@ -205,7 +222,9 @@ function InfoYTalles() {
         <h6>¿Tenés alguna otra duda?</h6>
         <p>Contactanos! consultas@sabrina.com.ar // 4554-2680</p>
         <a href="https://drive.google.com/file/d/1slx6iEJe6xV9Po1-rJEiSYuhxMMu2qd_/view?usp=share_link">
-          <h6>Bases y Condiciones CLUB SABRINA</h6>
+          <h6 style={{ fontWeight: "bold" }}>
+            Bases y Condiciones CLUB SABRINA
+          </h6>
         </a>
       </div>
     </div>

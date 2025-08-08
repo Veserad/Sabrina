@@ -54,7 +54,7 @@
 .input-busqueda {
   position: relative;
   width: 200px; /* o el ancho que necesites */
-  color:  rgb(231, 231, 230);
+  color:  rgb(221, 221, 218);
 }
 .input-busqueda input {
   width: 100%;

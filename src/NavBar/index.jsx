@@ -150,7 +150,6 @@ function NavBar() {
               </div>
               <div className="botones-derecha">
                 <div>
-                  {/* <Button variant="" className="boton-user user-icon"> */}
                   <Dropdown
                     show={show2}
                     id="navbarScrollingDropdown2"
@@ -177,7 +176,6 @@ function NavBar() {
                       </Dropdown.Item>
                     </Dropdown.Menu>
                   </Dropdown>
-                  {/* </Button> */}
                 </div>
                 <div className="">
                   <Button variant="" className="boton-carrito">
