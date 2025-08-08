@@ -18,7 +18,7 @@ import Registro from "./Pages/Register";
 
 function App() {
   return (
-    <Router>
+    <Router basename="/Sabrina">
       <ScrollToTop />
       <NavBar />
       <div className="whatsapp-folder">
