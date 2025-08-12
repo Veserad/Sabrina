@@ -107,57 +107,57 @@ function Home() {
             </li>
           </ul>
         </div>
-        <div className={styles.homeDestacados}>
-          <CardGroup>
-            <Card style={{ marginLeft: "25px" }}>
-              <Card.Img
-                variant="top"
-                src="https://acdn-us.mitiendanube.com/stores/915/088/products/sabrina-fw25-ecom0234-1-68a02a4da7ebbbabaf17416259745132-640-0.webp"
-              />
-              <Card.Body>
-                <Card.Title>
-                  <Link>TAPADO BENITA</Link>
-                </Card.Title>
-                <Card.Text>$109.990</Card.Text>
-              </Card.Body>
-              <Card.Footer>3 cuotas sin interés de $36.663,33</Card.Footer>
-            </Card>
-            <Card style={{ marginLeft: "25px" }}>
-              <Card.Img
-                variant="top"
-                src="https://acdn-us.mitiendanube.com/stores/915/088/products/sabrina-fw25-ecom0663-1b1779d8c0cd124d6417416229486652-640-0.webp"
-              />
-              <Card.Body>
-                <Card.Title>TAPADO AMATISTA</Card.Title>
-                <Card.Text>$119.990</Card.Text>
-              </Card.Body>
-              <Card.Footer>3 cuotas sin interés de $39.996,67</Card.Footer>
-            </Card>
-            <Card style={{ marginLeft: "25px" }}>
-              <Card.Img
-                variant="top"
-                src="https://acdn-us.mitiendanube.com/stores/915/088/products/sabrina-fw25-ecom0298-ca4e3ba7dd24206d5217416236722817-640-0.webp"
-              />
-              <Card.Body>
-                <Card.Title>TAPADO HELEN</Card.Title>
-                <Card.Text>$99.990 $79.990</Card.Text>
-              </Card.Body>
-              <Card.Footer>3 cuotas sin interés de $26.663,33</Card.Footer>
-            </Card>
-          </CardGroup>
+        <div className={styles.homeDestacadosContainer}>
+          <div className={styles.homeDestacados}>
+            <CardGroup>
+              <Card style={{ marginLeft: "25px", height: "auto" }}>
+                <Card.Img
+                  variant="top"
+                  src="https://acdn-us.mitiendanube.com/stores/915/088/products/sabrina-fw25-ecom0234-1-68a02a4da7ebbbabaf17416259745132-640-0.webp"
+                />
+                <Card.Body>
+                  <Card.Title style={{ height: "auto" }}>
+                    <Link>TAPADO BENITA</Link>
+                  </Card.Title>
+                  <Card.Text>$109.990</Card.Text>
+                </Card.Body>
+                <Card.Footer>3 cuotas sin interés de $36.663,33</Card.Footer>
+              </Card>
+              <Card style={{ marginLeft: "25px" }}>
+                <Card.Img
+                  variant="top"
+                  src="https://acdn-us.mitiendanube.com/stores/915/088/products/sabrina-fw25-ecom0663-1b1779d8c0cd124d6417416229486652-640-0.webp"
+                />
+                <Card.Body>
+                  <Card.Title>TAPADO AMATISTA</Card.Title>
+                  <Card.Text>$119.990</Card.Text>
+                </Card.Body>
+                <Card.Footer>3 cuotas sin interés de $39.996,67</Card.Footer>
+              </Card>
+              <Card style={{ marginLeft: "25px" }}>
+                <Card.Img
+                  variant="top"
+                  src="https://acdn-us.mitiendanube.com/stores/915/088/products/sabrina-fw25-ecom0298-ca4e3ba7dd24206d5217416236722817-640-0.webp"
+                />
+                <Card.Body>
+                  <Card.Title>TAPADO HELEN</Card.Title>
+                  <Card.Text>$99.990 $79.990</Card.Text>
+                </Card.Body>
+                <Card.Footer>3 cuotas sin interés de $26.663,33</Card.Footer>
+              </Card>
+            </CardGroup>
+          </div>
+          <div className={styles.homeButtonContainer}>
+            <button className={styles.homeButton}>
+              <Link
+                to={"/productos"}
+                style={{ color: "white", textDecoration: "none" }}
+              >
+                VER TODOS LOS PRODUCTOS
+              </Link>
+            </button>
+          </div>
         </div>
-      </div>
-      <div
-        style={{ display: "flex", justifyContent: "center", margin: "40px 0" }}
-      >
-        <button className={styles.homeButton}>
-          <Link
-            to={"/productos"}
-            style={{ color: "white", textDecoration: "none" }}
-          >
-            VER TODOS LOS PRODUCTOS
-          </Link>
-        </button>
       </div>
       <div style={{ width: "100vw", marginLeft: "calc(-50vw + 50%)" }}>
         <Link to={"/club-sabrina"}>
