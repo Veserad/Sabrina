@@ -1,5 +1,4 @@
 import Form from "react-bootstrap/Form";
-import Button from "react-bootstrap/Button";
 import { useForm } from "react-hook-form";
 import { create } from "../../Utils/authServices";
 import "./register.css";
@@ -43,7 +42,7 @@ function Registro() {
     watch,
     formState: { errors },
   } = useForm("mode:onChange");
-  const clave = watch("contraseña");
+  const clave = watch("password");
   return (
     <>
       <p style={{ margin: "0" }}>
@@ -59,8 +58,15 @@ function Registro() {
           </p>
           <Input
             title="NOMBRE"
-            placeholder="ej: Sergio Ruiz Diaz"
-            register={{ ...register("nombre", { required: true }) }}
+            placeholder="ej: Sergio Adrian"
+            register={{ ...register("name", { required: true }) }}
+            errors={errors}
+            name="apellido"
+          />
+          <Input
+            title="APELLIDO"
+            placeholder="ej: Ruiz Diaz"
+            register={{ ...register("lastName", { required: true }) }}
             errors={errors}
             name="nombre"
           />
@@ -74,7 +80,7 @@ function Registro() {
           <Input
             title="TELÉFONO (OPCIONAL)"
             placeholder="ej 1234567890"
-            register={{ ...register("telefono", { required: false }) }}
+            register={{ ...register("phone", { required: false }) }}
             errors={errors}
             name="telefono"
           />
@@ -83,7 +89,7 @@ function Registro() {
             type={verClave ? "text" : "password"}
             placeholder=""
             register={{
-              ...register("contraseña", {
+              ...register("password", {
                 required: true,
                 maxLength: 18,
                 minLength: 6,

@@ -10,7 +10,7 @@ export const create = async (data) => {
 };
 
 export const logIn = async (data) => {
-  return fetch("http://localhost:3000/users//login", {
+  return fetch("http://localhost:3000/users/login", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

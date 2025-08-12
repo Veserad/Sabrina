@@ -1,5 +1,4 @@
 import Form from "react-bootstrap/Form";
-import Button from "react-bootstrap/Button";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
 import { logIn } from "../../Utils/authServices";
@@ -21,6 +20,7 @@ function Login() {
   const { handleLogin } = useContext(AuthContext);
   const onSubmit = async (data) => {
     try {
+      console.log("datos", data);
       setLoading(true);
       const token = await logIn(data);
       console.log("token: ", token);
@@ -67,7 +67,7 @@ function Login() {
             title="CONTRASEÑA"
             placeholder="Ingrese su contraseña"
             type={verClave ? "text" : "password"}
-            register={{ ...register("contraseña", { required: true }) }}
+            register={{ ...register("password", { required: true }) }}
             errors={errors}
             name="contraseña"
             style={{ position: "relative" }}

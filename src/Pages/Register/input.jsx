@@ -1,6 +1,4 @@
 import Form from "react-bootstrap/Form";
-import Button from "react-bootstrap/Button";
-import { useForm } from "react-hook-form";
 function Input({
   title,
   placeholder,
