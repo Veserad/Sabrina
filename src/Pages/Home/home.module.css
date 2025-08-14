@@ -1,4 +1,4 @@
-@media (min-width: 770px) {
+@media (min-width: 1024px) {
   .homeImages {
     display: flex;
     justify-content: center;
@@ -15,7 +15,6 @@
   }
   button {
     all: unset;
-    /* display: inline-block; */
     overflow: hidden;
   }
   button:hover img {
@@ -27,12 +26,14 @@
   }
   .homeFinal {
     display: flex;
+    justify-content: center;
     margin-top: 85px;
     height: auto;
-    justify-content: center;
+   /* background-color: red; */
   }
   .homeCategories {
-    max-width: 20vw;
+    /* max-width: calc(100vw / 5); */
+    /* background-color: green; */
   }
   .homeCategories ul li {
     text-decoration: none;
@@ -43,17 +44,26 @@
     padding: 0 !important;
   }
   .homeDestacadosContainer {
-    display: inline-flex;
+    display: flex;
     /* background-color: aqua; */
     flex-wrap: wrap;
     justify-content: center;
+    /* width: 100%; */
   }
   .homeDestacados {
     display: flex;
-    max-width: 80vw;
+    /* max-width: 33% !important; */
+    box-sizing: border-box;
+    width: 100%;
     justify-content: space-evenly;
-    /* max-height: 100px; */
     /* background-color: red; */
+  }
+  .homeDestacados > div{
+    /* width: 33%; */
+    max-width: calc(100vw/1.25);
+  }
+  .homeDestacados div img{
+    width: 100%;
   }
   .homeButtonContainer {
     /* display: flex; */
@@ -69,6 +79,10 @@
   }
   .homeButton:hover {
     background-color: #333333;
+  }
+  .homeBanner{
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
   }
 }
 

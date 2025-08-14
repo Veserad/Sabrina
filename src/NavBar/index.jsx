@@ -40,15 +40,13 @@ function NavBar() {
       >
         <Container fluid>
           <div className="sabrina">
-            <Nav.Link as={Link} to={"/"}>
-              S A B R I N A
-            </Nav.Link>
+            <Link to={"/"}>S A B R I N A</Link>
           </div>
           <Navbar.Toggle aria-controls="navbarScroll" />
-          <Navbar.Collapse id="navbarScroll">
+          <Navbar.Collapse id="navbarScroll" className="barra2">
             <Nav
               className="me-auto my-2 my-lg-0"
-              style={{ maxHeight: "100px" }}
+              style={{ maxHeight: "50px" }}
               navbarScroll
             >
               <Nav.Link
@@ -148,42 +146,42 @@ function NavBar() {
                   <IoSearch />
                 </Button>
               </div>
-              <div className="botones-derecha">
-                <div>
-                  <Dropdown
-                    show={show2}
-                    id="navbarScrollingDropdown2"
-                    onMouseEnter={() => setShow2(true)}
-                    onMouseLeave={() => setShow2(false)}
-                  >
-                    <Dropdown.Toggle variant="" id="">
-                      <FaRegUser className="user-icon" />
-                    </Dropdown.Toggle>
-                    <Dropdown.Menu className="sesion-menu">
-                      <Dropdown.Item
-                        href="#/action-1"
-                        as={Link}
-                        to={"/account/register"}
-                      >
-                        CREAR CUENTA
-                      </Dropdown.Item>
-                      <Dropdown.Item
-                        href="#/action-2"
-                        as={Link}
-                        to={"/account/login"}
-                      >
-                        INICIAR SESIÓN
-                      </Dropdown.Item>
-                    </Dropdown.Menu>
-                  </Dropdown>
-                </div>
-                <div className="">
-                  <Button variant="" className="boton-carrito">
-                    <MdOutlineShoppingCart />
-                  </Button>
-                </div>
-              </div>
             </Form>
+            <div className="botones-derecha">
+              <div>
+                <Dropdown
+                  show={show2}
+                  id="navbarScrollingDropdown2"
+                  onMouseEnter={() => setShow2(true)}
+                  onMouseLeave={() => setShow2(false)}
+                >
+                  <Dropdown.Toggle variant="" id="">
+                    <FaRegUser className="user-icon" />
+                  </Dropdown.Toggle>
+                  <Dropdown.Menu className="sesion-menu">
+                    <Dropdown.Item
+                      href="#/action-1"
+                      as={Link}
+                      to={"/account/register"}
+                    >
+                      CREAR CUENTA
+                    </Dropdown.Item>
+                    <Dropdown.Item
+                      href="#/action-2"
+                      as={Link}
+                      to={"/account/login"}
+                    >
+                      INICIAR SESIÓN
+                    </Dropdown.Item>
+                  </Dropdown.Menu>
+                </Dropdown>
+              </div>
+              <div className="">
+                <Button variant="" className="boton-carrito">
+                  <MdOutlineShoppingCart />
+                </Button>
+              </div>
+            </div>
           </Navbar.Collapse>
         </Container>
       </Navbar>

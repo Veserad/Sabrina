@@ -109,14 +109,33 @@ function Home() {
         </div>
         <div className={styles.homeDestacadosContainer}>
           <div className={styles.homeDestacados}>
+            {/* <div>
+              <img
+                src="https://acdn-us.mitiendanube.com/stores/915/088/products/sabrina-fw25-ecom0234-1-68a02a4da7ebbbabaf17416259745132-640-0.webp"
+                alt=""
+              />
+            </div>
+            <div>
+              <img
+                src="https://acdn-us.mitiendanube.com/stores/915/088/products/sabrina-fw25-ecom0663-1b1779d8c0cd124d6417416229486652-640-0.webp"
+                alt=""
+              />
+            </div>
+            <div>
+              <img
+                src="https://acdn-us.mitiendanube.com/stores/915/088/products/sabrina-fw25-ecom0298-ca4e3ba7dd24206d5217416236722817-640-0.webp"
+                alt=""
+              />
+            </div> */}
             <CardGroup>
-              <Card style={{ marginLeft: "25px", height: "auto" }}>
+              <Card style={{ marginLeft: "25px", width: "auto" }}>
                 <Card.Img
+                  width={{}}
                   variant="top"
                   src="https://acdn-us.mitiendanube.com/stores/915/088/products/sabrina-fw25-ecom0234-1-68a02a4da7ebbbabaf17416259745132-640-0.webp"
                 />
                 <Card.Body>
-                  <Card.Title style={{ height: "auto" }}>
+                  <Card.Title style={{ height: "auto", border: "none" }}>
                     <Link>TAPADO BENITA</Link>
                   </Card.Title>
                   <Card.Text>$109.990</Card.Text>
@@ -159,14 +178,17 @@ function Home() {
           </div>
         </div>
       </div>
-      <div style={{ width: "100vw", marginLeft: "calc(-50vw + 50%)" }}>
-        <Link to={"/club-sabrina"}>
-          <img
-            src="https://acdn-us.mitiendanube.com/stores/915/088/themes/new_linkedman/1-img-1269857575-1584128092-5c742fc8ed0117c287ef72633a601dac1584128092-1920-1920.webp?459518919"
-            alt=""
-          />
-        </Link>
-      </div>
+      {/* <div style={{ width: "100vw", marginLeft: "calc(-50vw + 50%)" }}> */}
+      <Link to={"/club-sabrina"}>
+        <img
+          src="https://acdn-us.mitiendanube.com/stores/915/088/themes/new_linkedman/1-img-1269857575-1584128092-5c742fc8ed0117c287ef72633a601dac1584128092-1920-1920.webp?459518919"
+          alt=""
+          // max-width="100%"
+          // margin-left="calc(-50vw + 50%)"
+          className={styles.homeBanner}
+        />
+      </Link>
+      {/* </div> */}
     </div>
   );
 }

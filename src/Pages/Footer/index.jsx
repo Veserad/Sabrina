@@ -17,7 +17,7 @@ function Footer() {
       <div className="blanco">
         <div className="blanco envio">
           <div className="blanco-icon1">
-            <CiDeliveryTruck size="40px" />
+            <CiDeliveryTruck size="40px" margin="0" />
           </div>
           <div>
             <h6>ENVÍOS GRATIS</h6>
