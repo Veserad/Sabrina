@@ -1,4 +1,7 @@
 /* carrousel.css */
+.carrousel{
+  max-height:650px
+}
 .carousel-item{
     height: 650px; /*ajusta el alto del carrusel*/
 }
@@ -9,7 +12,6 @@
 
 .carousel {
   width: 100vw;
-  height: 60%;
   margin: 0 auto;
   margin-left: calc(-50vw + 50%);
 }

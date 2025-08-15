@@ -36,16 +36,17 @@ function NavBar() {
       <Navbar
         expand="lg"
         bg="none"
-        className={`barra ${scrolled ? "scrolled" : ""}`}
+        className={`barra ${scrolled ? "scrolled" : ""} flex-nowrap`}
       >
         <Container fluid>
-          <div className="sabrina">
-            <Link to={"/"}>S A B R I N A</Link>
-          </div>
+          <Navbar.Brand as={Link} to="/" className="sabrina">
+            S A B R I N A
+          </Navbar.Brand>
+
           <Navbar.Toggle aria-controls="navbarScroll" />
-          <Navbar.Collapse id="navbarScroll" className="barra2">
+          <Navbar.Collapse id="navbarScroll" className="flex-grow-1">
             <Nav
-              className="me-auto my-2 my-lg-0"
+              className="me-auto my-2 my-lg-0 barra2"
               style={{ maxHeight: "50px" }}
               navbarScroll
             >
