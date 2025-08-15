@@ -5,7 +5,45 @@ import { MdPlace } from "react-icons/md";
 import { FaFacebookF } from "react-icons/fa";
 import styles from "./contacto.module.css";
 import { Link } from "react-router-dom";
+import { useState } from "react";
+import { useForm } from "react-hook-form";
+import ButtonSpinner from "../../Components/spinner";
+import AlertNavigation from "../../Components/AlertNavigation";
 function Contacto() {
+  const [loading, setLoading] = useState(false);
+  const [alertNavigation, setAlertNavigation] = useState({
+    message: "",
+    variant: "",
+  });
+  const onsubmit = async (data) => {
+    setLoading(true);
+    console.log(data);
+    try {
+      const response = await contacto; // servicio por crear
+      setLoading(false);
+      setAlertNavigation({
+        message:
+          "Nos pondremos en contacto en la brevedad, gracias por comunicarte con nosotros.",
+        variant: "success",
+        duration: 3300,
+        link: "/account/login",
+      });
+      console.log(response);
+    } catch (e) {
+      setAlertNavigation({
+        message: registroErrorMEssage[e.code] || "Ha ocurrido un error",
+        variant: "danger",
+      });
+      setLoading(false);
+      console.log(e);
+    }
+  };
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors },
+  } = useForm("mode:onChange");
   return (
     <>
       <div>
@@ -42,33 +80,43 @@ function Contacto() {
           </div>
         </div>
 
-        <div className={styles.formulario}>
+        <form className={styles.formulario} onSubmit={handleSubmit(onsubmit)}>
           <div>
             <label htmlFor="">NOMBRE</label>
             <div>
-              <input type="text" />
+              <input type="text" {...register("nombre", { required: true })} />
             </div>
           </div>
 
           <div>
             <label htmlFor="">EMAIL</label>
             <div>
-              <input type="email" />
+              <input type="email" {...register("email", { required: true })} />
             </div>
           </div>
           <div>
             <label htmlFor="">TELÉFONO (OPCIONAL)</label>
             <div>
-              <input type="text" />
+              <input type="text" {...register("telefono")} />
             </div>
           </div>
           <div>
             <label htmlFor="">MENSAJE (OPCIONAL)</label>
             <div>
-              <textarea name="" id=""></textarea>
+              <textarea name="" id="" {...register("mensaje")}></textarea>
             </div>
           </div>
-        </div>
+          <div className="d-grid gap-2">
+            <ButtonSpinner
+              size="lg"
+              label="Enviar"
+              type="submit"
+              variant="dark"
+              loading={loading}
+            />
+          </div>
+          <AlertNavigation {...alertNavigation} />
+        </form>
       </div>
     </>
   );
