@@ -1,13 +1,15 @@
 /* carrousel.css */
 .carrousel{
-  max-height:650px
+  background-color: red;
 }
 .carousel-item{
-    height: 650px; /*ajusta el alto del carrusel*/
+  max-height: 650px; /*ajusta el alto del carrusel*/
+    background-color: yellow;
 }
 .carousel-item img {
   width: 100%;
-  object-fit: cover; /* hace que la imagen se ajuste al tamaño del carrusel ; O 'contain' si no querés recorte */
+  object-fit: cover; 
+  /* hace que la imagen se ajuste al tamaño del carrusel ; O 'contain' si no querés recorte */
 }
 
 .carousel {
