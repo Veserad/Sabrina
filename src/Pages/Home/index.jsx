@@ -3,10 +3,34 @@ import styles from "./home.module.css"; // Assuming you have a CSS file for styl
 import { Link } from "react-router-dom";
 import Card from "react-bootstrap/Card";
 import CardGroup from "react-bootstrap/CardGroup";
+import Alert from "react-bootstrap/Alert";
+import Button from "react-bootstrap/Button";
 
 function Home() {
   return (
     <div>
+      <Alert variant="danger">
+        <Alert.Heading>Disclaimer de la página web</Alert.Heading>
+        <p>
+          Este es un sitio de prueba, hecho a partir del sitio web
+          'sabrina.com.ar', a modo de ejercitación en el framework React. No es
+          un sitio oficial ni tiene relación con la marca Sabrina.
+        </p>
+        <hr />
+        <p>
+          Actualmente, la página es solo ilustrativa, no posee funcionalidades
+          al no estar conectada a una base de datos, por lo que las secciones de
+          productos y contacto se encuentran deshabilitadas
+        </p>
+        <hr />
+        <p className="mb-0">
+          A continuación, se presentan los certificados de educación disponibles
+        </p>
+        <hr />
+        <Button variant="info" as={Link} to={"/educacion"}>
+          Educación
+        </Button>
+      </Alert>
       <CarouselHome />
       <div className={styles.homeImages}>
         <div>
@@ -55,52 +79,52 @@ function Home() {
               </h6>
             </li>
             <li>
-              <Link>Abrigos & Sacos</Link>
+              <Link to={"/productos"}>Abrigos & Sacos</Link>
             </li>
             <li>
-              <Link>Camperas</Link>
+              <Link to={"/productos"}>Camperas</Link>
             </li>
             <li>
-              <Link>Sastrería</Link>
+              <Link to={"/productos"}>Sastrería</Link>
             </li>
             <li>
-              <Link>Tejidos</Link>
+              <Link to={"/productos"}>Tejidos</Link>
             </li>
             <li>
-              <Link to={"/"}> Sweaters & BUZOS</Link>
+              <Link to={"/productos"}> Sweaters & BUZOS</Link>
             </li>
             <li>
-              <Link>Camisas & Blusas</Link>
+              <Link to={"/productos"}>Camisas & Blusas</Link>
             </li>
             <li>
-              <Link>Remeras</Link>
+              <Link to={"/productos"}>Remeras</Link>
             </li>
             <li>
-              <Link>Pantalones</Link>
+              <Link to={"/productos"}>Pantalones</Link>
             </li>
             <li>
-              <Link>Jeans</Link>
+              <Link to={"/productos"}>Jeans</Link>
             </li>
             <li>
-              <Link>Pantalones</Link>
+              <Link to={"/productos"}>Pantalones</Link>
             </li>
             <li>
-              <Link>Jeans</Link>
+              <Link to={"/productos"}>Jeans</Link>
             </li>
             <li>
-              <Link>Vestidos & Monos</Link>
+              <Link to={"/productos"}>Vestidos & Monos</Link>
             </li>
             <li>
-              <Link>Sportswear</Link>
+              <Link to={"/productos"}>Sportswear</Link>
             </li>
             <li>
-              <Link>Faldas</Link>
+              <Link to={"/productos"}>Faldas</Link>
             </li>
             <li>
-              <Link>Accesorios</Link>
+              <Link to={"/productos"}>Accesorios</Link>
             </li>
             <li>
-              <Link>Gift Cards</Link>
+              <Link to={"/productos"}>Gift Cards</Link>
             </li>
             <li>
               <Link>Home</Link>

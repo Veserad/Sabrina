@@ -65,29 +65,51 @@ function NavBar() {
                 onMouseLeave={() => setShow(false)}
                 className="coleccion"
               >
-                <NavDropdown.Item href="#action3">
+                <NavDropdown.Item as={Link} to="/productos">
                   ABRIGOS & SACOS
                 </NavDropdown.Item>
-                <NavDropdown.Item href="#action3">CAMPERAS</NavDropdown.Item>
-                <NavDropdown.Item href="#action3">SASTRERIA</NavDropdown.Item>
-                <NavDropdown.Item href="#action3">TEJIDOS</NavDropdown.Item>
-                <NavDropdown.Item href="#action3">
+                <NavDropdown.Item as={Link} to="/productos">
+                  CAMPERAS
+                </NavDropdown.Item>
+                <NavDropdown.Item as={Link} to="/productos">
+                  SASTRERIA
+                </NavDropdown.Item>
+                <NavDropdown.Item as={Link} to="/productos">
+                  TEJIDOS
+                </NavDropdown.Item>
+                <NavDropdown.Item as={Link} to="/productos">
                   SWEATERS & BUZOS
                 </NavDropdown.Item>
-                <NavDropdown.Item href="#action3">
+                <NavDropdown.Item as={Link} to="/productos">
                   CAMISAS & BLUSAS
                 </NavDropdown.Item>
-                <NavDropdown.Item href="#action3">REMERAS</NavDropdown.Item>
-                <NavDropdown.Item href="#action3">PANTALONES</NavDropdown.Item>
-                <NavDropdown.Item href="#action3">JEANS</NavDropdown.Item>
-                <NavDropdown.Item href="#action3">
+                <NavDropdown.Item as={Link} to="/productos">
+                  REMERAS
+                </NavDropdown.Item>
+                <NavDropdown.Item as={Link} to="/productos">
+                  PANTALONES
+                </NavDropdown.Item>
+                <NavDropdown.Item as={Link} to="/productos">
+                  JEANS
+                </NavDropdown.Item>
+                <NavDropdown.Item as={Link} to="/productos">
                   VESTIDOS & MONOS
                 </NavDropdown.Item>
-                <NavDropdown.Item href="#action3">SPORTSWEAR</NavDropdown.Item>
-                <NavDropdown.Item href="#action3">FALDAS</NavDropdown.Item>
-                <NavDropdown.Item href="#action3">ACCESORIOS</NavDropdown.Item>
-                <NavDropdown.Item href="#action3">GIFT CARDS</NavDropdown.Item>
-                <NavDropdown.Item href="#action3">HOME</NavDropdown.Item>
+                <NavDropdown.Item as={Link} to="/productos">
+                  SPORTSWEAR
+                </NavDropdown.Item>
+                <NavDropdown.Item as={Link} to="/productos">
+                  FALDAS
+                </NavDropdown.Item>
+                <NavDropdown.Item as={Link} to="/productos">
+                  ACCESORIOS
+                </NavDropdown.Item>
+                <NavDropdown.Item as={Link} to="/productos">
+                  GIFT CARDS
+                </NavDropdown.Item>
+                <NavDropdown.Item as={Link} to="/">
+                  HOME
+                </NavDropdown.Item>
               </NavDropdown>
               <Nav.Link
                 as={Link}

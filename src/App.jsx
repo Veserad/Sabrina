@@ -15,6 +15,7 @@ import { Link } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import Login from "./Pages/Login";
 import Registro from "./Pages/Register";
+import Educacion from "./Pages/Educacion";
 
 function App() {
   return (
@@ -43,6 +44,7 @@ function App() {
         <Route path="/productos" element={<Productos />} />
         <Route path="/account/login" element={<Login />} />
         <Route path="/account/register" element={<Registro />} />
+        <Route path="/educacion" element={<Educacion />} />
       </Routes>
       <Footer />
     </Router>
