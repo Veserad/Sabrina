@@ -12,31 +12,31 @@ function Educacion() {
       </p>
       {/* <embed
         className={styles.pdf}
-        src="/Sabrina/src/Pages/Educacion/Certificado Angular.pdf"
+        src="/Sabrina/pdfs/Certificado Angular.pdf"
         width="100%"
         height="650px"
       /> */}
       <embed
         className={styles.pdf}
-        src="/Sabrina/src/Pages/Educacion/Certificado ReactJs.pdf"
+        src="/Sabrina/pdfs/Certificado ReactJS.pdf"
         width="100%"
         height="650px"
       />
       <embed
         className={styles.pdf}
-        src="/Sabrina/src/Pages/Educacion/Certificados NodeJs.pdf"
+        src="/Sabrina/pdfs/Certificados NodeJs.pdf"
         width="100%"
         height="650px"
       />
       <embed
         className={styles.pdf}
-        src="/Sabrina/src/Pages/Educacion/Certificado Professional Full-Stack Developer.pdf"
+        src="/Sabrina/pdfs/Certificado Professional Full-Stack Developer.pdf"
         width="100%"
         height="650px"
       />
       <embed
         className={styles.pdf}
-        src="/Sabrina/src/Pages/Educacion/Certificados full stack con react.pdf"
+        src="/Sabrina/pdfs/Certificados full stack con react.pdf"
         width="100%"
         height="650px"
       />
