@@ -168,11 +168,11 @@ function Footer() {
             </li>
             <li>
               <MdOutlinePhoneEnabled />
-              <span> 4554-2680</span>
+              <span> 0000-0000</span>
             </li>
             <li>
               <MdOutlineAlternateEmail />
-              <span> consultas@sabrina.com.ar</span>
+              <span> consultas@0000.com.ar</span>
             </li>
             <li>
               <MdPlace />
@@ -184,10 +184,14 @@ function Footer() {
           <h6>REDES SOCIALES</h6>
           <div className="redes-sociales">
             <div className="insta">
-              <FaInstagram size="15px" color="black" />
+              <Link to={"https://www.instagram.com/"} target="_blank">
+                <FaInstagram size="15px" color="black" />
+              </Link>
             </div>
             <div className="face">
-              <FaFacebookF size="15px" color="black" />
+              <Link to={"https://www.facebook.com/"} target="_blank">
+                <FaFacebookF size="15px" color="black" />
+              </Link>
             </div>
           </div>
           <h6>CLUB SABRINA</h6>
@@ -205,17 +209,12 @@ function Footer() {
       </div>
       <div className="copyright">
         <div className="creado">
-          <a
-            href="https://www.tiendanube.com/?utm_source=store&utm_medium=referral&utm_campaign=footerSlogan"
-            target="_blank"
-          >
-            creado con <FaMixcloud size="30px" color="black" />
-            <span className="tiendanube"> tiendanube</span>
-          </a>
+          creado con <FaMixcloud size="30px" color="black" />
+          <span className="tiendanube"> React</span>
         </div>
         <div className="copyright-text">
           <p>
-            Copyright SABRINA - 2025. Todos los derechos reservados. Defensa de
+            Copyright Sergio - 2025. Todos los derechos reservados. Defensa de
             las y los consumidores. Para reclamos{" "}
             <a
               href="https://www.argentina.gob.ar/produccion/defensadelconsumidor/formulario"

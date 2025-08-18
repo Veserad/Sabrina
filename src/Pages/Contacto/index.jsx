@@ -57,11 +57,11 @@ function Contacto() {
           <div className={styles.contacto1}>
             <div>
               <FaPhone className={styles.icons} />
-              4554-2680
+              0000-0000
             </div>
             <div>
               <MdEmail className={styles.icons} />
-              consultas@sabrina.com.ar
+              consultas@0000.com.ar
             </div>
             <div>
               <MdPlace className={styles.icons} />

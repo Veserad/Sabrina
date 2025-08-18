@@ -26,7 +26,7 @@ function App() {
         <Button variant="">
           <Link
             to={
-              "https://api.whatsapp.com/send/?phone=5491161113461&text&type=phone_number&app_absent=0"
+              "https://api.whatsapp.com/send/?phone=5491100000000&text&type=phone_number&app_absent=0"
             }
             target="_blank"
           >
