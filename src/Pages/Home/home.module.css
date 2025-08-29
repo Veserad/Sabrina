@@ -86,8 +86,8 @@
   }
 }
 
-@media (max-width: 769px) {
-  .homeImages {
+@media (max-width: 1023px) {
+  /* .homeImages {
     width: 100vw !important;
-  }
+  } */
 }

@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import Card from "react-bootstrap/Card";
 import CardGroup from "react-bootstrap/CardGroup";
 import Alert from "react-bootstrap/Alert";
-import Button from "react-bootstrap/Button";
 
 function Home() {
   return (
@@ -22,14 +21,6 @@ function Home() {
           al no estar conectada a una base de datos, por lo que las secciones de
           productos y contacto se encuentran deshabilitadas
         </p>
-        <hr />
-        <p className="mb-0">
-          A continuación, se presentan los certificados de educación disponibles
-        </p>
-        <hr />
-        <Button variant="info" as={Link} to={"/educacion"}>
-          Educación
-        </Button>
       </Alert>
       <CarouselHome />
       <div className={styles.homeImages}>

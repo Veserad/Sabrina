@@ -11,7 +11,13 @@ import { FaRegUser } from "react-icons/fa";
 import { MdOutlineShoppingCart } from "react-icons/md";
 import "./NavBar.css";
 import { useEffect, useState } from "react";
+
+import { MdOutlineMenu } from "react-icons/md";
+import OffCanvas from "../Components/canvas.jsx";
 function NavBar() {
+  const [showFirst, setShowFirst] = useState(false);
+  const [showSecond, setShowSecond] = useState(false);
+
   const location = useLocation();
   const [scrolled, setScrolled] = useState(false);
   const [show, setShow] = useState(false);
@@ -32,7 +38,68 @@ function NavBar() {
           abonando con transferencia!
         </Link>
       </div>
+      <div className="menu-mobile">
+        <h1>S A B R I N A</h1>
+        <Button
+          variant=""
+          className="boton-carrito"
+          onClick={() => setShowFirst(true)}
+        >
+          <MdOutlineShoppingCart size={25} />
+        </Button>
+        <Button
+          variant="none"
+          className="me-2"
+          onClick={() => setShowSecond(true)}
+        >
+          <MdOutlineMenu size={25} />
+          MENÚ
+        </Button>
 
+        <OffCanvas
+          show={showFirst}
+          handleClose={() => setShowFirst(false)}
+          title="Carrito de compras"
+          placement="end"
+        >
+          EL CARRITO DE COMPRAS ESTA VACÍO
+        </OffCanvas>
+
+        <OffCanvas
+          className="offCanvas"
+          show={showSecond}
+          handleClose={() => setShowSecond(false)}
+          title=""
+          placement="end"
+        >
+          <div className="offcanvas-content">
+            <div className="offcanvas-linmks">
+              <hr />
+              <Link to={"/"}>Inicio</Link>
+              <hr />
+              <Link to={"/club-sabrina"}>Club Sabrina</Link>
+              <hr />
+              <Link to={"/locales"}>Locales</Link>
+              <hr />
+              <Link to={"/preguntasfrecuentes"}>Info & Talles</Link>
+              <hr />
+              <Link to={"/quienes-somos"}>Quiénes Somos</Link>
+              <hr />
+              <Link to={"/contacto"}>Contacto</Link>
+              <hr />
+              <div className="menu-fondo">
+                <div className="user-mobile">
+                  <FaRegUser className="user-icon" size={15} color="white" />
+                </div>
+                <div>
+                  <Link to={"/account/register"}>Crear Cuenta</Link> |{" "}
+                  <Link to={"/account/login"}>Iniciar Sesión</Link>
+                </div>
+              </div>
+            </div>
+          </div>
+        </OffCanvas>
+      </div>
       <Navbar
         expand="lg"
         bg="none"
