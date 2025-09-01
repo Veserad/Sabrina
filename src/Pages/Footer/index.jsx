@@ -9,44 +9,46 @@ import { CiCreditCard1 } from "react-icons/ci";
 import { IoLockClosedOutline } from "react-icons/io5";
 import { FaMixcloud } from "react-icons/fa";
 import "./footer.css";
-import { useState } from "react";
 import Carousel from "react-bootstrap/Carousel";
-
 import { Link } from "react-router-dom";
 
 function Footer() {
-  const [index, setIndex] = useState(0);
-
-  const handleSelect = (selectedIndex) => {
-    setIndex(selectedIndex);
-  };
   return (
     <div className="footer">
       <div className="carrusel-blanco">
-        <Carousel activeIndex={index} onSelect={handleSelect}>
-          <Carousel.Item className="carrusel-blanco">
-            <CiDeliveryTruck size="40px" margin="0" />
-            <h6>ENVÍOS GRATIS</h6>
-            <p>Para compras de más de $160.000</p>
+        <Carousel>
+          <Carousel.Item>
+            <div className="carousel-item-content">
+              <CiDeliveryTruck size="40px" />
+              <h6>ENVÍOS GRATIS</h6>
+              <p>Para compras de más de $160.000</p>
+            </div>
           </Carousel.Item>
-          <Carousel.Item className="carrusel-blanco">
-            <CiCreditCard1 size="40px" />
-            <h6>CUOTAS SIN INTERÉS</h6>
-            <p>
-              Podés pagar con cualquier tarjeta en hasta 3 sin interés en tienda
-              online!
-            </p>
+          <Carousel.Item>
+            <div className="carousel-item-content">
+              <CiCreditCard1 size="40px" />
+              <h6>CUOTAS SIN INTERÉS</h6>
+              <p>
+                {" "}
+                Podés pagar con cualquier tarjeta en hasta 3 sin interés en
+                tienda online!
+              </p>
+            </div>
           </Carousel.Item>
-          <Carousel.Item className="carrusel-blanco">
-            <IoLockClosedOutline size="40px" />
-            <h6>SITIO SEGURO</h6>
-            <p>
-              Protegemos tus datos, comprá tranquila desde cualquier punto del
-              país.
-            </p>
+          <Carousel.Item>
+            <div className="carousel-item-content">
+              <IoLockClosedOutline size="40px" />
+              <h6>SITIO SEGURO</h6>
+              <p>
+                {" "}
+                Protegemos tus datos, comprá tranquila desde cualquier punto del
+                país.
+              </p>
+            </div>
           </Carousel.Item>
         </Carousel>
       </div>
+
       <div className="blanco">
         <div className="blanco envio">
           <div className="blanco-icon1">
