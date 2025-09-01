@@ -2,6 +2,41 @@
   text-decoration: none;
   color: inherit;
 }
+.insta,
+  .face {
+    background-color: white;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+  }
+  .face {
+    margin-left: 10px;
+  }
+  .redes-sociales {
+    display: flex;
+  }
+  .input {
+    display: flex;
+  }
+  .redes input {
+    background-color: rgb(32, 30, 30);
+    border: 2px white solid;
+    padding: 10px;
+  }
+  .redes input::placeholder {
+    color: white;
+  }
+  .copyright-text {
+    font-size: 11px;
+    text-transform: uppercase;
+    font-weight: 100;
+  }
+  .copyright-text a {
+    font-weight: 800;
+  }
 @media (min-width: 1024px) {
   /* ENVIOS */
   .blanco {
@@ -69,14 +104,7 @@
   .creado a {
     font-size: 14px;
   }
-  .copyright-text {
-    font-size: 11px;
-    text-transform: uppercase;
-    font-weight: 100;
-  }
-  .copyright-text a {
-    font-weight: 800;
-  }
+  
 
   /* footer negro */
 
@@ -138,33 +166,6 @@
     width: 25vw;
     margin-left: 250px;
   }
-  .insta,
-  .face {
-    background-color: white;
-    border-radius: 50%;
-    width: 30px;
-    height: 30px;
-    align-items: center;
-    display: flex;
-    justify-content: center;
-  }
-  .face {
-    margin-left: 10px;
-  }
-  .redes-sociales {
-    display: flex;
-  }
-  .redes input {
-    background-color: rgb(32, 30, 30);
-    border: 2px white solid;
-    padding: 10px;
-  }
-  .redes input::placeholder {
-    color: white;
-  }
-  .input {
-    display: flex;
-  }
   .send {
     display: flex;
     background-color: white;
@@ -172,42 +173,115 @@
     align-items: center;
     justify-content: center;
   }
+  .carrusel-blanco{
+    display: none;
+  }
+  .izq > :first-child{
+   display: none;
+  }
 }
 
 @media (max-width: 1023px) {
- .blanco{
-  display: none;
- }
- .carrusel-blanco{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  justify-content: center;
- }
- .carousel-item-content{
-  background-color: white;
-  width: 100%;
-  min-height: 200px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
- }
- /* Indicadores circulares */
-.carrusel-blanco .carousel-indicators li {
-  width: 12px;            /* ancho */
-  height: 12px;           /* alto */
-  border-radius: 50% !important;     /* círculo */
-  background-color: rgba(0, 0, 0, 0.3); /* color de los inactivos */
-  border: 1px solid #000; /* opcional */
-  margin: 0 5px;          /* separación */
-}
+  .blanco {
+    display: none;
+  }
+  .carrusel-blanco {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+  }
+  .carousel-item-content {
+    background-color: white;
+    width: 100%;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  /* Indicadores circulares */
+  .carrusel-blanco .carousel-indicators li {
+    width: 12px; /* ancho */
+    height: 12px; /* alto */
+    border-radius: 50% !important; /* círculo */
+    background-color: rgba(0, 0, 0, 0.3); /* color de los inactivos */
+    border: 1px solid #000; /* opcional */
+    margin: 0 5px; /* separación */
+  }
 
-/* Indicador activo */
-.carrusel-blanco .carousel-indicators .active {
-  background-color: #000;  /* color del activo */
-  transform: scale(1.2);   /* opcional, lo agranda */
-}
+  /* Indicador activo */
+  .carrusel-blanco .carousel-indicators .active {
+    background-color: #000; /* color del activo */
+    transform: scale(1.2); /* opcional, lo agranda */
+  }
+  .negro{
+    background-color: rgb(32, 30, 30);
+    color: white;
+  }
+  .izq, .medio, .contacto, .redes{
+    margin-left: 1rem;
 
+  }
+  .izq ul li.nav{
+    display: none;
+  }
+  .izq ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    /* margin: 0 !important; */
+    padding: 0;
+  }
+  .izq ul li{
+    width: 40%;
+  }
+  .medio > :first-child{
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .medio img {
+    margin-right: 1px;
+    width: 40px;
+    margin: 10px;
+    margin-left: 0;
+    margin-top: 0;
+  }
+  .medio h6{
+    margin-top: 2rem;
+  }
+  .contacto ul{
+    list-style: none;
+    padding: 0;
+  }
+  .redes-sociales{
+    margin-bottom: 1.5rem;
+  }
+  .redes input{
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    margin-bottom: 1rem;
+    width: 100%;
+  }
+  .div-input {
+    width: 100%
+  }
+  .redes input:focus{
+    color: white;
+  }
+  .copyright{
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+  }
+  .copyright-text{
+    flex-wrap: wrap;
+    margin-left: 3rem;
+    margin-right: 3rem;
+  }
 }

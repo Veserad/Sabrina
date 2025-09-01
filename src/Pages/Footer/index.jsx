@@ -86,6 +86,7 @@ function Footer() {
       </div>
       <div className="negro">
         <div className="izq">
+          <h6>NAVEGACIÓN</h6>
           <ul>
             <li className="nav">
               <h6>NAVEGACIÓN</h6>
@@ -231,7 +232,7 @@ function Footer() {
           </div>
           <h6>CLUB SABRINA</h6>
           <div className="input">
-            <div>
+            <div className="div-input">
               <input type="text" placeholder="Email" />
             </div>
             <button>
