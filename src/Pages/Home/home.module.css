@@ -119,6 +119,10 @@
   .cardBody {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+  }
+  .card{
+    margin-top: 1rem;
   }
   .cardBody .card {
     flex: 1 1 40%; /* base: 40%, crece y se encoge si hace falta */
