@@ -11,12 +11,15 @@ import { FaRegUser } from "react-icons/fa";
 import { MdOutlineShoppingCart } from "react-icons/md";
 import "./NavBar.css";
 import { useEffect, useState } from "react";
+import { IoIosArrowDown } from "react-icons/io";
+import { RiArrowLeftSLine } from "react-icons/ri";
 
 import { MdOutlineMenu } from "react-icons/md";
 import OffCanvas from "../Components/canvas.jsx";
 function NavBar() {
   const [showFirst, setShowFirst] = useState(false);
   const [showSecond, setShowSecond] = useState(false);
+  const [showColeccion, setShowColeccion] = useState(false);
 
   const location = useLocation();
   const [scrolled, setScrolled] = useState(false);
@@ -61,6 +64,7 @@ function NavBar() {
           handleClose={() => setShowFirst(false)}
           title="Carrito de compras"
           placement="end"
+          className="offCanvas"
         >
           EL CARRITO DE COMPRAS ESTA VACÍO
         </OffCanvas>
@@ -73,27 +77,152 @@ function NavBar() {
           placement="end"
         >
           <div className="offcanvas-content">
-            <div className="offcanvas-linmks">
-              <hr />
-              <Link to={"/"}>Inicio</Link>
-              <hr />
-              <Link to={"/club-sabrina"}>Club Sabrina</Link>
-              <hr />
-              <Link to={"/locales"}>Locales</Link>
-              <hr />
-              <Link to={"/preguntasfrecuentes"}>Info & Talles</Link>
-              <hr />
-              <Link to={"/quienes-somos"}>Quiénes Somos</Link>
-              <hr />
-              <Link to={"/contacto"}>Contacto</Link>
-              <hr />
+            <div>
+              <div className="offcanvas-links">
+                <hr />
+                <Link to={"/"} onClick={() => setShowSecond(false)}>
+                  Inicio
+                </Link>
+                <hr />
+                <button
+                  to={"/"}
+                  onClick={() => setShowColeccion(!showColeccion)}
+                  className="coleccion-button"
+                >
+                  Colección{" "}
+                  <div>
+                    <IoIosArrowDown
+                      className={
+                        showColeccion
+                          ? "coleccion-invisible"
+                          : "coleccion-visible"
+                      }
+                    />
+                    <RiArrowLeftSLine
+                      className={
+                        showColeccion
+                          ? "coleccion-visible"
+                          : "coleccion-invisible"
+                      }
+                    />
+                  </div>
+                </button>
+                <div
+                  className={
+                    showColeccion ? "coleccion-visible" : "coleccion-invisible"
+                  }
+                >
+                  <hr />
+                  <Link to={"/productos"} onClick={() => setShowSecond(false)}>
+                    Ver todos los productos
+                  </Link>
+                  <hr />
+                  <Link to={"/productos"} onClick={() => setShowSecond(false)}>
+                    Abrigos & Sacos
+                  </Link>
+                  <hr />
+                  <Link to={"/productos"} onClick={() => setShowSecond(false)}>
+                    Camperas
+                  </Link>
+                  <hr />
+                  <Link to={"/productos"} onClick={() => setShowSecond(false)}>
+                    Sastrería
+                  </Link>
+                  <hr />
+                  <Link to={"/productos"} onClick={() => setShowSecond(false)}>
+                    Tejidos
+                  </Link>
+                  <hr />
+                  <Link to={"/productos"} onClick={() => setShowSecond(false)}>
+                    Sweaters & Buzos
+                  </Link>
+                  <hr />
+                  <Link to={"/productos"} onClick={() => setShowSecond(false)}>
+                    Camisas & Blusas
+                  </Link>
+                  <hr />
+                  <Link to={"/productos"} onClick={() => setShowSecond(false)}>
+                    Remeras
+                  </Link>
+                  <hr />
+                  <Link to={"/productos"} onClick={() => setShowSecond(false)}>
+                    Pantalones
+                  </Link>
+                  <hr />
+                  <Link to={"/productos"} onClick={() => setShowSecond(false)}>
+                    Jeans
+                  </Link>
+                  <hr />
+                  <Link to={"/productos"} onClick={() => setShowSecond(false)}>
+                    Vestidos & Monos
+                  </Link>
+                  <hr />
+                  <Link to={"/productos"} onClick={() => setShowSecond(false)}>
+                    Sportswear
+                  </Link>
+                  <hr />
+                  <Link to={"/productos"} onClick={() => setShowSecond(false)}>
+                    Faldas
+                  </Link>
+                  <hr />
+                  <Link to={"/productos"} onClick={() => setShowSecond(false)}>
+                    Accesorios
+                  </Link>
+                  <hr />
+                  <Link to={"/productos"} onClick={() => setShowSecond(false)}>
+                    Gift Cards
+                  </Link>
+                  <hr />
+                  <Link to={"/"} onClick={() => setShowSecond(false)}>
+                    Home
+                  </Link>
+                </div>
+                <hr />
+                <Link to={"/club-sabrina"} onClick={() => setShowSecond(false)}>
+                  Club Sabrina
+                </Link>
+                <hr />
+                <Link to={"/locales"} onClick={() => setShowSecond(false)}>
+                  Locales
+                </Link>
+                <hr />
+                <Link
+                  to={"/preguntasfrecuentes"}
+                  onClick={() => setShowSecond(false)}
+                >
+                  Info & Talles
+                </Link>
+                <hr />
+                <Link
+                  to={"/quienes-somos"}
+                  onClick={() => setShowSecond(false)}
+                >
+                  Quiénes Somos
+                </Link>
+                <hr />
+                <Link to={"/contacto"} onClick={() => setShowSecond(false)}>
+                  Contacto
+                </Link>
+                <hr />
+              </div>
               <div className="menu-fondo">
                 <div className="user-mobile">
                   <FaRegUser className="user-icon" size={15} color="white" />
                 </div>
                 <div>
-                  <Link to={"/account/register"}>Crear Cuenta</Link> |{" "}
-                  <Link to={"/account/login"}>Iniciar Sesión</Link>
+                  <Link
+                    to={"/account/register"}
+                    onClick={() => setShowSecond(false)}
+                  >
+                    Crear Cuenta
+                  </Link>{" "}
+                  |{" "}
+                  <Link
+                    to={"/account/login"}
+                    onClick={() => setShowSecond(false)}
+                  >
+                    Iniciar Sesión
+                  </Link>
                 </div>
               </div>
             </div>

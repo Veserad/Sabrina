@@ -1,3 +1,13 @@
+.homeButton {
+    background-color: black;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  .homeButton:hover {
+    background-color: #333333;
+  }
 @media (min-width: 1024px) {
   .homeImages {
     display: flex;
@@ -29,7 +39,7 @@
     justify-content: center;
     margin-top: 85px;
     height: auto;
-   /* background-color: red; */
+    /* background-color: red; */
   }
   .homeCategories {
     /* max-width: calc(100vw / 5); */
@@ -45,49 +55,80 @@
   }
   .homeDestacadosContainer {
     display: flex;
-    /* background-color: aqua; */
     flex-wrap: wrap;
     justify-content: center;
-    /* width: 100%; */
   }
   .homeDestacados {
     display: flex;
-    /* max-width: 33% !important; */
     box-sizing: border-box;
     width: 100%;
     justify-content: space-evenly;
-    /* background-color: red; */
   }
-  .homeDestacados > div{
-    /* width: 33%; */
-    max-width: calc(100vw/1.25);
+  .homeDestacados > div {
+    max-width: calc(100vw / 1.25);
   }
-  .homeDestacados div img{
+  .homeDestacados div img {
     width: 100%;
   }
   .homeButtonContainer {
-    /* display: flex; */
     justify-content: center;
     margin: 40px 0;
   }
-  .homeButton {
-    background-color: black;
-    padding-bottom: 10px;
-    padding-top: 10px;
-    padding-left: 30px;
-    padding-right: 30px;
-  }
-  .homeButton:hover {
-    background-color: #333333;
-  }
-  .homeBanner{
+  
+  .homeBanner {
     width: 100vw;
     margin-left: calc(-50vw + 50%);
   }
 }
 
 @media (max-width: 1023px) {
-  /* .homeImages {
-    width: 100vw !important;
-  } */
+  a img {
+    max-width: 100%;
+    height: auto;
+  }
+  .homeCategories {
+  }
+  .homeCategories ul {
+    display: flex;
+    flex-direction: row;
+    text-decoration: none;
+    overflow-x: auto;
+    flex: 0 0 auto;
+    margin-left: 0 !important;
+  }
+  .homeCategories ul li {
+    text-decoration: none;
+    list-style: none;
+    margin-right: 1rem;
+    background-color: rgb(219, 219, 219);
+    padding: 5px;
+    flex: 0 0 auto;
+  }
+  .homeCategoriesTitle {
+    display: none;
+    text-decoration: none;
+  }
+  .homeDestacados {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 1rem !important;
+    justify-content: center;
+    text-align: center;
+    justify-content: flex-start; /*alinea a la izquierda */
+  }
+  .cardBody {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .cardBody .card {
+    flex: 1 1 40%; /* base: 40%, crece y se encoge si hace falta */
+    max-width: 40%; /* nunca supera 40% del contenedor */
+    box-sizing: border-box; 
+    min-width: 100px;
+  }
+  .homeButtonContainer{
+    display: flex;
+    justify-content: center;
+  }
+  
 }

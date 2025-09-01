@@ -64,7 +64,7 @@ function Home() {
       <div className={styles.homeFinal}>
         <div className={styles.homeCategories}>
           <ul>
-            <li>
+            <li className={styles.homeCategoriesTitle}>
               <h6 style={{ fontWeight: "bold", marginBottom: "20px" }}>
                 Categorías principales
               </h6>
@@ -124,26 +124,11 @@ function Home() {
         </div>
         <div className={styles.homeDestacadosContainer}>
           <div className={styles.homeDestacados}>
-            {/* <div>
-              <img
-                src="https://acdn-us.mitiendanube.com/stores/915/088/products/sabrina-fw25-ecom0234-1-68a02a4da7ebbbabaf17416259745132-640-0.webp"
-                alt=""
-              />
-            </div>
-            <div>
-              <img
-                src="https://acdn-us.mitiendanube.com/stores/915/088/products/sabrina-fw25-ecom0663-1b1779d8c0cd124d6417416229486652-640-0.webp"
-                alt=""
-              />
-            </div>
-            <div>
-              <img
-                src="https://acdn-us.mitiendanube.com/stores/915/088/products/sabrina-fw25-ecom0298-ca4e3ba7dd24206d5217416236722817-640-0.webp"
-                alt=""
-              />
-            </div> */}
-            <CardGroup>
-              <Card style={{ marginLeft: "25px", width: "auto" }}>
+            <CardGroup className={styles.cardBody}>
+              <Card
+                style={{ marginLeft: "25px", width: "auto" }}
+                className={styles.card}
+              >
                 <Card.Img
                   width={{}}
                   variant="top"
@@ -157,7 +142,7 @@ function Home() {
                 </Card.Body>
                 <Card.Footer>3 cuotas sin interés de $36.663,33</Card.Footer>
               </Card>
-              <Card style={{ marginLeft: "25px" }}>
+              <Card style={{ marginLeft: "25px" }} className={styles.card}>
                 <Card.Img
                   variant="top"
                   src="https://acdn-us.mitiendanube.com/stores/915/088/products/sabrina-fw25-ecom0663-1b1779d8c0cd124d6417416229486652-640-0.webp"
@@ -168,7 +153,7 @@ function Home() {
                 </Card.Body>
                 <Card.Footer>3 cuotas sin interés de $39.996,67</Card.Footer>
               </Card>
-              <Card style={{ marginLeft: "25px" }}>
+              <Card style={{ marginLeft: "25px" }} className={styles.card}>
                 <Card.Img
                   variant="top"
                   src="https://acdn-us.mitiendanube.com/stores/915/088/products/sabrina-fw25-ecom0298-ca4e3ba7dd24206d5217416236722817-640-0.webp"

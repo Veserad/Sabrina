@@ -1,13 +1,13 @@
 .div-negro a {
-    color: white;
-    text-decoration: none;
-    font-size: 13px;
-    line-height: 1;
-    display: inline-block;
-    text-align: center;
-  }
+  color: white;
+  text-decoration: none;
+  font-size: 13px;
+  line-height: 1;
+  display: inline-block;
+  text-align: center;
+}
 @media (min-width: 1024px) {
-  .menu-mobile{
+  .menu-mobile {
     display: none;
   }
   /* bg-body-tertiary */
@@ -174,54 +174,71 @@
     text-decoration: underline;
   }
 }
-                                /*mobile styles */
+/*mobile styles */
 @media (max-width: 1023px) {
-  .div-negro{
+  .div-negro {
     background-color: black;
   }
-  .div-negro a{
+  .div-negro a {
     color: white;
   }
-  .barra{
+  .barra {
     display: none;
   }
-  .menu-mobile{
+  .menu-mobile {
     display: flex;
   }
-  .me-2{
+  .me-2 {
     display: flex;
     align-items: center;
   }
-  .offCanvas .offcanvas-content {
-    /* width: 20% !important; */
-    /* overflow-y: auto; */
-  display: flex;
-  flex-direction: column;
-  height: 100%; /* ocupa toda la altura del canvas */
-}
-
-.offCanvas .offcanvas-links {
-  flex: 1;              /* ocupa todo el espacio disponible arriba */
-  overflow-y: auto;     /* si hay muchos links, que hagan scroll */
-}
-.offCanvas .menu-fondo {
-  padding: 1rem;
-  color: white;
-  text-align: center;
-}
-  .user-mobile{
+  .offCanvas{
+    max-width: 80%;
+  }
+  .offcanvas-content{
+    width: 100%;
+  }
+  .coleccion-button{
+    background-color: white !important;
+    color: black !important ;
+    text-decoration: none;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none;
+  }
+  .offcanvas-links a, .coleccion-button{
+    /* background-color: red; */
+    display: flex;
+    justify-content: space-between;
+    width: 100% !important;
+    text-decoration: none;
+  }
+  .menu-fondo {
+    padding: 1rem;
+    background-color: white;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    padding-left: 0px !important;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
+  .user-mobile {
     background-color: black;
     width: 40px;
     height: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-right: 15px;
+    margin-right: 5px;
   }
-  .menu-fondo{
-    display: flex;
-    align-items: center;
-    /* position: fixed;
-    bottom: 0; */
+  .coleccion-invisible{
+    display: none;
+    justify-content: space-evenly;
+  }
+  .coleccion-visible{
+    /* background-color: grey; */
+
   }
 }

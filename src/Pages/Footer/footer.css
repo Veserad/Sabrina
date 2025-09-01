@@ -1,9 +1,10 @@
-.footer a{
-    text-decoration: none;
-    color: inherit;
+.footer a {
+  text-decoration: none;
+  color: inherit;
 }
-                                /* ENVIOS */
-.blanco{
+@media (min-width: 1024px) {
+  /* ENVIOS */
+  .blanco {
     display: flex;
     /* flex-wrap: wrap; */
     margin-top: 30px;
@@ -12,8 +13,10 @@
     margin-left: calc(-50vw + 50%); */
     justify-content: center;
     /* background-color: aqua; */
-}
-.envio, .cuotas, .seguro{
+  }
+  .envio,
+  .cuotas,
+  .seguro {
     width: 33%;
     /* background-color: red; */
     /* display: flex; */
@@ -21,34 +24,35 @@
     justify-content: center !important;
     /* width: 100vw; */
     /* margin-left: calc(-50vw + 50%); */
-}
-.blanco p, .blanco h6, .blanco > div{
+  }
+  .blanco p,
+  .blanco h6,
+  .blanco > div {
     margin: 0;
-}
-.blanco h6{
+  }
+  .blanco h6 {
     font-weight: bold;
-}
-.envio{
+  }
+  .envio {
     border-right: 1px solid black;
     height: 50px;
     /* justify-content: flex-start;  */
-}
-.cuotas{
-     border-right: 1px solid black;
+  }
+  .cuotas {
+    border-right: 1px solid black;
     height: 70px;
-}
-.blanco-icon2-3{
+  }
+  .blanco-icon2-3 {
     margin-left: 30px;
     margin-right: 30px;
-}
-.blanco-icon1{
+  }
+  .blanco-icon1 {
     margin-right: 20px;
-}
+  }
 
+  /*Copyright*/
 
-                            /*Copyright*/
-
-.copyright{
+  .copyright {
     width: 100vw;
     margin-left: calc(-50vw + 50%);
     padding-left: 0.5rem;
@@ -57,82 +61,85 @@
     justify-content: space-between;
     align-items: center;
     height: 65px;
-}
-.creado{
+  }
+  .creado {
     font-weight: 600;
     margin-left: 1rem;
-}
-.creado a{
+  }
+  .creado a {
     font-size: 14px;
-}
-.copyright-text{
+  }
+  .copyright-text {
     font-size: 11px;
     text-transform: uppercase;
     font-weight: 100;
-}
-.copyright-text a{
+  }
+  .copyright-text a {
     font-weight: 800;
-}
+  }
 
-                        /* footer negro */
+  /* footer negro */
 
-.negro{
-    width: 100vw;  /* 100% del ancho del viewport */
+  .negro {
+    width: 100vw; /* 100% del ancho del viewport */
     background-color: rgb(32, 30, 30);
-    margin-left: calc(-50vw + 50%); /* quita el limite de ancho de pagina puesto en root-app.css*/
+    margin-left: calc(
+      -50vw + 50%
+    ); /* quita el limite de ancho de pagina puesto en root-app.css*/
     height: 260px auto;
     display: flex;
-    color:white;
+    color: white;
     padding-top: 2rem;
     padding-left: 0.4rem;
     box-sizing: border-box;
-}
-/* .negro img{
+  }
+  /* .negro img{
     width:110px;
 } */
-.izq{
+  .izq {
     width: 21.3%;
     box-sizing: border-box;
     /* margin-left: 1rem; */
     /* background-color: red; */
-}
-.izq ul li{
+  }
+  .izq ul li {
     list-style: none;
-}
-.izq li:hover{
-    text-decoration:underline;
-}
-.izq li.nav:hover{
+  }
+  .izq li:hover {
+    text-decoration: underline;
+  }
+  .izq li.nav:hover {
     text-decoration: none;
-}
-.medio{
+  }
+  .medio {
     box-sizing: border-box;
-    width:23%;
-}
-.medio img{
+    width: 23%;
+  }
+  .medio img {
     margin-right: 1px;
     width: 40px;
-    margin:10px ;
+    margin: 10px;
     margin-left: 0;
     margin-top: 0;
-}
-.oca img{
+  }
+  .oca img {
     width: 60px;
-}
-.contacto{
+  }
+  .contacto {
     box-sizing: border-box;
     width: 25vw;
-}
-.contacto ul li{
+  }
+  .contacto ul li {
     list-style: none;
     margin-left: 0;
-}
-.redes{
+  }
+  .redes {
     box-sizing: border-box;
     width: 25vw;
     margin-left: 250px;
-}
-.insta,.face{
+  }
+  .insta,
+  .face {
     background-color: white;
     border-radius: 50%;
     width: 30px;
@@ -140,28 +147,59 @@
     align-items: center;
     display: flex;
     justify-content: center;
-}
-.face{
+  }
+  .face {
     margin-left: 10px;
-}
-.redes-sociales{
+  }
+  .redes-sociales {
     display: flex;
-}
-.redes input{
+  }
+  .redes input {
     background-color: rgb(32, 30, 30);
     border: 2px white solid;
     padding: 10px;
-}
-.redes input::placeholder{
+  }
+  .redes input::placeholder {
     color: white;
-}
-.input{
+  }
+  .input {
     display: flex;
-}
-.send{
+  }
+  .send {
     display: flex;
     background-color: white;
     width: 40px;
     align-items: center;
     justify-content: center;
+  }
+}
+
+@media (max-width: 1023px) {
+ .blanco{
+  display: none;
+ }
+ .carrusel-blanco{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  background-color: white;
+ }
+ /* Estilo general de los indicadores */
+.carousel-indicators li {
+  width: 12px;            /* ancho del indicador */
+  height: 12px;           /* alto */
+  border-radius: 50%;     /* círculo */
+  background-color: rgba(255, 255, 255, 0.5);
+  border: 1px solid #fff;
+  margin: 0 5px;          /* separación */
+}
+
+/* Indicador activo */
+.carousel-indicators .active {
+  background-color: #fff; /* color del indicador activo */
+  transform: scale(1.2);  /* opcional: agranda el activo */
+}
+
 }
