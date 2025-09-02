@@ -1,14 +1,15 @@
 import { Link } from "react-router-dom";
+import styles from "./InfoYTalles.module.css";
 function InfoYTalles() {
   return (
-    <div>
+    <div className={styles.paddingMobile}>
       <div>
         <p style={{ fontSize: "20px" }}>
           <Link>Inicio</Link> /{" "}
           <span style={{ fontWeight: "bold" }}>Preguntas Frecuentes</span>
         </p>
       </div>
-      <div>
+      <div className={styles.texto}>
         <h6 style={{ fontWeight: "bold" }}>¿Cómo hago para comprar?</h6>
         <ol>
           <li>
@@ -82,7 +83,7 @@ function InfoYTalles() {
           ¿Qué formas de pago puedo aprovechar para realizar mi compra?
         </h6>
         <p>Disponemos de los siguientes medios de pago:</p>
-        <div>
+        <div className={styles.mediosDePago}>
           <img
             src="https://d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/visa@2x.png"
             alt=""

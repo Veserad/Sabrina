@@ -1,46 +1,100 @@
-.contactoPage{
+@media (min-width: 1024px) {
+  .contactoPage {
     display: flex;
     justify-content: space-between;
     /* background-color: aqua; */
-}
-.contactos{
+  }
+  .contactos {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     width: 50%;
     margin-top: 20px;
     /* background-color: red; */
-}
-.formulario{
+  }
+  .formulario {
     /* background-color: yellow; */
     width: 50%;
-}
-.icons{
-    size:600px;
-    margin:10px
-}
-.contacto2{
+  }
+  .icons {
+    size: 600px;
+    margin: 10px;
+  }
+  .contacto2 {
     margin-right: 20%;
-}
-.formulario input{
+  }
+  .formulario input {
     width: 100%;
     height: 40px;
     border: 1px solid rgb(177, 165, 165);
     outline: none;
-    margin-top: 10PX;
-}
-input.mensaje{
+    margin-top: 10px;
+  }
+  input.mensaje {
     height: 100px;
-}
-.formulario label{
-    margin-top:10px
-}
-.formulario textarea{
+  }
+  .formulario label {
+    margin-top: 10px;
+  }
+  .formulario textarea {
     outline: none;
     width: 100%;
     height: 100px;
-    MARGIN-TOP:10PX
-}
-textarea:focus, input:focus{
+    margin-top: 10px;
+  }
+  textarea:focus,
+  input:focus {
     border-color: rgb(8, 235, 235);
+  }
+}
+
+@media (max-width: 1023px) {
+  .contactoPage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* background-color: aqua; */
+  }
+  .contactos {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-top: 20px;
+    margin-left: 10px;
+    /* background-color: red; */
+  }
+  .formulario {
+    /* background-color: yellow; */
+    width: 90%;
+  }
+  .icons {
+    size: 600px;
+    margin: 10px;
+  }
+  .contacto2 {
+    margin-right: 0%;
+  }
+  .formulario input {
+    width: 100%;
+    height: 40px;
+    border: 1px solid rgb(177, 165, 165);
+    outline: none;
+    margin-top: 10px;
+  }
+  input.mensaje {
+    height: 100px;
+  }
+  .formulario label {
+    margin-top: 10px;
+  }
+  .formulario textarea {
+    outline: none;
+    width: 100%;
+    height: 100px;
+    margin-top: 10px;
+  }
+  textarea:focus,
+  input:focus {
+    border-color: rgb(8, 235, 235);
+  }
 }

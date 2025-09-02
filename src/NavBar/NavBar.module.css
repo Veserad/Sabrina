@@ -1,4 +1,4 @@
-.div-negro a {
+.divNegro a {
   color: white;
   text-decoration: none;
   font-size: 13px;
@@ -7,7 +7,7 @@
   text-align: center;
 }
 @media (min-width: 1024px) {
-  .menu-mobile {
+  .menuMobile {
     display: none;
   }
   /* bg-body-tertiary */
@@ -23,19 +23,13 @@
     /* transition: top 0.3s ease; */
     /* width: 100%; */
   }
-  .flex-grow-1 {
+  :global(.flex-grow-1) {
     flex-grow: 1; /* El menú ocupa todo el espacio disponible */
   }
   .barra2 {
     flex-grow: 1; /* Nav ocupa el espacio horizontal restante */
     flex-wrap: wrap;
     justify-content: center;
-  }
-  .barra3 {
-    background-color: green;
-  }
-  .barra.scrolled {
-    top: 0; /* Se pega al top cuando se hace scroll */
   }
   .sabrina {
     /* margin-right: 20%; */
@@ -47,21 +41,27 @@
     width: auto;
     /* background-color: red; */
   }
+  .barra3 {
+    background-color: green;
+  }
+  .barra.scrolled {
+    top: 0; /* Se pega al top cuando se hace scroll */
+  }
   .active {
     border-bottom: solid 1px;
     border-top: solid 1px;
     color: rgb(182, 182, 182) !important;
   }
-  .dropdown-item:hover,
-  .nav-link:hover,
-  .dropdown-toggle:hover {
+  :global(.dropdown-item:hover),
+  :global(.nav-link:hover),
+  :global(.dropdown-toggle:hover) {
     color: rgb(231, 231, 230) !important;
     background-color: white !important;
   }
-  .dropdown-toggle::after {
+  :global(.dropdown-toggle::after) {
     display: none;
   }
-  .dropdown-menu {
+  :global(.dropdown-menu) {
     margin-top: -2px !important;
     border-radius: 0%;
     background-color: white;
@@ -69,7 +69,7 @@
   .derecha {
     display: flex;
   }
-  .form-control {
+  :global(.form-control) {
     border: none;
     border-radius: 0%;
     border-bottom: solid 1px;
@@ -77,21 +77,21 @@
     padding: 0%;
     color: rgb(231, 231, 230);
   }
-  .input-busqueda {
+  .inputBusqueda {
     position: relative;
     width: 200px; /* o el ancho que necesites */
     color: rgb(221, 221, 218);
   }
-  .input-busqueda input {
+  .inputBusqueda input {
     width: 100%;
     padding-right: 60px; /* espacio para el botón */
     border-radius: 0%;
     height: 40px;
   }
-  .input-busqueda input::placeholder {
+  .inputBusqueda input::placeholder {
     color: rgb(231, 231, 230);
   }
-  .boton-busqueda {
+  .botonBusqueda {
     position: absolute;
     right: 10px;
     top: 35%;
@@ -100,31 +100,31 @@
     color: black;
     font-size: 25px;
   }
-  .botones-derecha {
+  .botonesDerecha {
     display: flex;
     height: 40px;
   }
-  .boton-user,
-  .boton-carrito {
+  .botonUser,
+  .botonCarrito {
     font-size: 25px;
     position: relative;
     bottom: 10px;
   }
-  .user-icon {
+  .userIcon {
     font-size: 25px;
   }
-  .botones-derecha .dropdown-menu {
+  .botonesDerecha :global(.dropdown-menu) {
     background-color: black;
     left: auto !important; /* Anula el valor por defecto de Bootstrap */
     right: -60px;
     font-size: 10px;
     width: 2px !important;
   }
-  .botones-derecha a {
+  .botonesDerecha a {
     text-decoration: none;
     color: white;
   }
-  .botones-derecha .dropdown-item:hover {
+  .botonesDerecha :global(.dropdown-item:hover) {
     background-color: black !important;
     text-decoration: underline;
   }
@@ -132,7 +132,7 @@
   display: inline-block !important;
   width: auto !important;
 } */
-  .sesion-menu .dropdown-item {
+  .sesionMenu :global(.dropdown-item) {
     display: inline-block !important;
     width: auto !important;
     padding: 6px 12px;
@@ -142,11 +142,11 @@
     text-align: center;
     margin: 5px auto;
   }
-  .fixed-navbar {
+  .fixedNavbar {
     width: 100vw;
     margin-left: calc(-50vw + 50%);
   }
-  .div-negro {
+  .divNegro {
     background-color: black;
     height: 30px;
     display: flex;
@@ -161,7 +161,7 @@
     margin-left: calc(-50vw + 50%);
   }
 
-  /* .div-negro a {
+  /* .divNegro a {
     color: white;
     text-decoration: none;
     font-size: 13px;
@@ -170,39 +170,49 @@
     text-align: center;
   } */
 
-  .div-negro a:hover {
+  .divNegro a:hover {
     text-decoration: underline;
   }
 }
 /*mobile styles */
 @media (max-width: 1023px) {
-  .div-negro {
+  .divNegro {
     background-color: black;
+    margin-bottom: 40px;
   }
-  .div-negro a {
+  .divNegro a {
     color: white;
   }
   .barra {
     display: none;
   }
-  .menu-mobile {
+  .menuMobile {
     display: flex;
     justify-content: space-between;
+    position: fixed;
+    top: 30px;
+    z-index: 400;
+    background-color: white;
+    width: 100%;
   }
-  .menu-mobile-buttons{
+  :global(.menuMobile) a{
+    text-decoration: none !important;
+    color: black !important;
+  }
+  .menuMobileButtons{
     display: flex;
   }
-  .me-2 {
+  .me2 {
     display: flex;
     align-items: center;
   }
   .offCanvas{
     max-width: 80%;
   }
-  .offcanvas-content{
+  .offcanvasContent{
     width: 100%;
   }
-  .coleccion-button{
+  .coleccionButton{
     background-color: white !important;
     color: black !important ;
     text-decoration: none;
@@ -210,14 +220,15 @@
     padding: 0 !important;
     border: none;
   }
-  .offcanvas-links a, .coleccion-button{
+  .offcanvasLinks a, .coleccionButton{
     /* background-color: red; */
+    color: black !important;
     display: flex;
     justify-content: space-between;
     width: 100% !important;
     text-decoration: none;
   }
-  .menu-fondo {
+  .menuFondo {
     padding: 1rem;
     background-color: white;
     text-align: center;
@@ -228,7 +239,7 @@
     bottom: 0;
     width: 100%;
   }
-  .user-mobile {
+  .userMobile {
     background-color: black;
     width: 40px;
     height: 40px;
@@ -237,12 +248,15 @@
     justify-content: center;
     margin-right: 5px;
   }
-  .coleccion-invisible{
+  .coleccionInvisible{
     display: none;
     justify-content: space-evenly;
   }
-  .coleccion-visible{
+  .coleccionVisible{
     /* background-color: grey; */
 
+  }
+  .menuMobile.scrolled{
+    top: 0;
   }
 }

@@ -77,4 +77,8 @@ iframe[src*="recaptcha"] {
     max-width: 100%;
     box-sizing: border-box;
   }
+  a{
+    color: black;
+    text-decoration: none;
+  }
 }

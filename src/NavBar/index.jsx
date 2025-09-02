@@ -9,7 +9,7 @@ import { Link, useLocation } from "react-router-dom";
 import { IoSearch } from "react-icons/io5";
 import { FaRegUser } from "react-icons/fa";
 import { MdOutlineShoppingCart } from "react-icons/md";
-import "./NavBar.css";
+import styles from "./NavBar.module.css";
 import { useEffect, useState } from "react";
 import { IoIosArrowDown } from "react-icons/io";
 import { RiArrowLeftSLine } from "react-icons/ri";
@@ -34,28 +34,32 @@ function NavBar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
   return (
-    <div className="fixed-navbar">
-      <div className="div-negro">
+    <div className={styles.fixedNavbar}>
+      <div className={styles.divNegro}>
         <Link to="/productos">
-          ¡Envío gratis a partir de $130.000 y 6 cuotas sin interés! - ¡10$OFF
+          ¡Envío gratis a partir de $130.000 y 6 cuotas sin interés! - ¡10%OFF
           abonando con transferencia!
         </Link>
       </div>
-      <div className="menu-mobile">
+      <div
+        className={`${styles.menuMobile} ${scrolled ? styles.scrolled : ""}`}
+      >
         <h1>
-          <Link to={"/"}>S A B R I N A</Link>
+          <Link to={"/"} className={styles.sabrina}>
+            S A B R I N A
+          </Link>
         </h1>
-        <div className="menu-mobile-buttons">
+        <div className={styles.menuMobileButtons}>
           <Button
             variant=""
-            className="boton-carrito"
+            className={styles.botonCarrito}
             onClick={() => setShowFirst(true)}
           >
             <MdOutlineShoppingCart size={25} />
           </Button>
           <Button
             variant="none"
-            className="me-2"
+            className={`me-2 ${styles.me2}`}
             onClick={() => setShowSecond(true)}
           >
             <MdOutlineMenu size={25} />
@@ -68,21 +72,21 @@ function NavBar() {
           handleClose={() => setShowFirst(false)}
           title="Carrito de compras"
           placement="end"
-          className="offCanvas"
+          className={styles.offCanvas}
         >
           EL CARRITO DE COMPRAS ESTA VACÍO
         </OffCanvas>
 
         <OffCanvas
-          className="offCanvas"
+          className={styles.offCanvas}
           show={showSecond}
           handleClose={() => setShowSecond(false)}
           title=""
           placement="end"
         >
-          <div className="offcanvas-content">
+          <div className={styles.offcanvasContent}>
             <div>
-              <div className="offcanvas-links">
+              <div className={styles.offcanvasLinks}>
                 <hr />
                 <Link to={"/"} onClick={() => setShowSecond(false)}>
                   Inicio
@@ -91,29 +95,31 @@ function NavBar() {
                 <button
                   to={"/"}
                   onClick={() => setShowColeccion(!showColeccion)}
-                  className="coleccion-button"
+                  className={styles.coleccionButton}
                 >
                   Colección{" "}
                   <div>
                     <IoIosArrowDown
                       className={
                         showColeccion
-                          ? "coleccion-invisible"
-                          : "coleccion-visible"
+                          ? styles.coleccionInvisible
+                          : styles.coleccionVisible
                       }
                     />
                     <RiArrowLeftSLine
                       className={
                         showColeccion
-                          ? "coleccion-visible"
-                          : "coleccion-invisible"
+                          ? styles.coleccionVisible
+                          : styles.coleccionInvisible
                       }
                     />
                   </div>
                 </button>
                 <div
                   className={
-                    showColeccion ? "coleccion-visible" : "coleccion-invisible"
+                    showColeccion
+                      ? styles.coleccionVisible
+                      : styles.coleccionInvisible
                   }
                 >
                   <hr />
@@ -209,9 +215,13 @@ function NavBar() {
                 </Link>
                 <hr />
               </div>
-              <div className="menu-fondo">
-                <div className="user-mobile">
-                  <FaRegUser className="user-icon" size={15} color="white" />
+              <div className={styles.menuFondo}>
+                <div className={styles.userMobile}>
+                  <FaRegUser
+                    className={styles.userIcon}
+                    size={15}
+                    color="white"
+                  />
                 </div>
                 <div>
                   <Link
@@ -236,24 +246,26 @@ function NavBar() {
       <Navbar
         expand="lg"
         bg="none"
-        className={`barra ${scrolled ? "scrolled" : ""} flex-nowrap`}
+        className={`${styles.barra} ${
+          scrolled ? styles.scrolled : ""
+        } flex-nowrap`}
       >
         <Container fluid>
-          <Navbar.Brand as={Link} to="/" className="sabrina">
+          <Navbar.Brand as={Link} to="/" className={styles.sabrina}>
             S A B R I N A
           </Navbar.Brand>
 
           <Navbar.Toggle aria-controls="navbarScroll" />
           <Navbar.Collapse id="navbarScroll" className="flex-grow-1">
             <Nav
-              className="me-auto my-2 my-lg-0 barra2"
+              className={`me-auto my-2 my-lg-0 ${styles.barra2}`}
               style={{ maxHeight: "50px" }}
               navbarScroll
             >
               <Nav.Link
                 as={Link}
                 to={"/"}
-                className={`${location.pathname === "/" ? "active" : ""}`}
+                className={`${location.pathname === "/" ? styles.active : ""}`}
               >
                 INICIO
               </Nav.Link>
@@ -263,7 +275,7 @@ function NavBar() {
                 show={show}
                 onMouseEnter={() => setShow(true)}
                 onMouseLeave={() => setShow(false)}
-                className="coleccion"
+                className={styles.coleccio}
               >
                 <NavDropdown.Item as={Link} to="/productos">
                   ABRIGOS & SACOS
@@ -315,7 +327,7 @@ function NavBar() {
                 as={Link}
                 to={"/club-sabrina"}
                 className={`${
-                  location.pathname === "/club-sabrina" ? "active" : ""
+                  location.pathname === "/club-sabrina" ? styles.active : ""
                 }`}
               >
                 CLUB SABRINA
@@ -324,7 +336,7 @@ function NavBar() {
                 as={Link}
                 to={"/locales"}
                 className={`${
-                  location.pathname === "/locales" ? "active" : ""
+                  location.pathname === "/locales" ? styles.active : ""
                 }`}
               >
                 LOCALES
@@ -333,7 +345,9 @@ function NavBar() {
                 as={Link}
                 to={"/preguntasfrecuentes"}
                 className={`${
-                  location.pathname === "/preguntasfrecuentes" ? "active" : ""
+                  location.pathname === "/preguntasfrecuentes"
+                    ? styles.active
+                    : ""
                 }`}
               >
                 INFO & TALLES
@@ -342,7 +356,7 @@ function NavBar() {
                 as={Link}
                 to={"/quienes-somos"}
                 className={`${
-                  location.pathname === "/quienes-somos" ? "active" : ""
+                  location.pathname === "/quienes-somos" ? styles.active : ""
                 }`}
               >
                 QUIÉNES SOMOS
@@ -351,26 +365,26 @@ function NavBar() {
                 as={Link}
                 to={"/contacto"}
                 className={`${
-                  location.pathname === "/contacto" ? "active" : ""
+                  location.pathname === "/contacto" ? styles.active : ""
                 }`}
               >
                 CONTACTO
               </Nav.Link>
             </Nav>
-            <Form className="derecha">
-              <div className="input-busqueda">
+            <Form className={styles.derecha}>
+              <div className={styles.inputBusqueda}>
                 <Form.Control
                   type="search"
                   placeholder="Buscar"
-                  className="me-2"
+                  className={`me-2 ${styles.m2}`}
                   aria-label="Search"
                 />
-                <Button variant="" className="boton-busqueda">
+                <Button variant="" className={styles.botonBusqueda}>
                   <IoSearch />
                 </Button>
               </div>
             </Form>
-            <div className="botones-derecha">
+            <div className={styles.botonesDerecha}>
               <div>
                 <Dropdown
                   show={show2}
@@ -379,9 +393,9 @@ function NavBar() {
                   onMouseLeave={() => setShow2(false)}
                 >
                   <Dropdown.Toggle variant="" id="">
-                    <FaRegUser className="user-icon" />
+                    <FaRegUser className={styles.userIcon} />
                   </Dropdown.Toggle>
-                  <Dropdown.Menu className="sesion-menu">
+                  <Dropdown.Menu className={styles.sesionMenu}>
                     <Dropdown.Item
                       href="#/action-1"
                       as={Link}
@@ -399,8 +413,8 @@ function NavBar() {
                   </Dropdown.Menu>
                 </Dropdown>
               </div>
-              <div className="">
-                <Button variant="" className="boton-carrito">
+              <div>
+                <Button variant="" className={styles.botonCarrito}>
                   <MdOutlineShoppingCart />
                 </Button>
               </div>

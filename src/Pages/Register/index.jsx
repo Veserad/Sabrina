@@ -44,7 +44,7 @@ function Registro() {
   } = useForm("mode:onChange");
   const clave = watch("password");
   return (
-    <>
+    <div className="container register">
       <p style={{ margin: "0" }}>
         <Link to={"/"}>Inicio</Link> / {""}
         <Link to={"/account"}>Mi Cuenta</Link> {"/ "}
@@ -167,7 +167,7 @@ function Registro() {
           </p>
         </Form>
       </div>
-    </>
+    </div>
   );
 }
 

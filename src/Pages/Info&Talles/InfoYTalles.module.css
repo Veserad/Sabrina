@@ -1,0 +1,13 @@
+@media (max-width: 1023px){
+    .paddingMobile{
+        padding: 10px
+    }
+    .mediosDePago{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 5px;
+    }
+    .mediosDePago img{
+        margin-bottom: 15px;
+    }
+}

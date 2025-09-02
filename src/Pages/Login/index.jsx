@@ -47,13 +47,13 @@ function Login() {
     formState: { errors },
   } = useForm();
   return (
-    <>
+    <div className="container register">
       <p style={{ margin: "0" }}>
         <Link to={"/"}>Inicio</Link> / {""}
         <Link to={"/account"}>Mi Cuenta</Link> {"/ "}
         <span className="negrita">Crear Cuenta</span>
       </p>
-      <div className="fondo">
+      <div className="fondo fondo2">
         <Form onSubmit={handleSubmit(onSubmit)}>
           <Input
             title="EMAIL"
@@ -103,7 +103,7 @@ function Login() {
           <AlertNavigation {...alertNavigation} />
         </Form>
       </div>
-    </>
+    </div>
   );
 }
 

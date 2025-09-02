@@ -26,7 +26,7 @@ function Home() {
       <div className={styles.homeImages}>
         <div>
           <button>
-            <Link to={"/abrigos-sacos"}>
+            <Link to={"/productos"}>
               <img
                 src="https://acdn-us.mitiendanube.com/stores/915/088/themes/new_linkedman/1-img-2056557664-1741794533-39397890acdfdb099b088a82f17986fc1741794533-480-0.jpg?721963621"
                 alt="programacion"
@@ -38,7 +38,7 @@ function Home() {
         </div>
         <div className={styles.homeImages2}>
           <button>
-            <Link to={"/tejidos"}>
+            <Link to={"/productos"}>
               <img
                 src="https://acdn-us.mitiendanube.com/stores/915/088/themes/new_linkedman/1-img-196832069-1741741731-cca029e37c497536e38e8d547da898b81741741732-480-0.jpg?721963621"
                 alt="programacion"
@@ -50,7 +50,7 @@ function Home() {
         </div>
         <div>
           <button>
-            <Link to={"/camperas"}>
+            <Link to={"/productos"}>
               <img
                 src="https://acdn-us.mitiendanube.com/stores/915/088/themes/new_linkedman/1-img-81181632-1741794533-242d434a0f2792aaeb8f2c21153b0e8c1741794534-480-0.jpg?721963621"
                 alt="programacion"
@@ -129,24 +129,28 @@ function Home() {
                 style={{ marginLeft: "25px", width: "auto" }}
                 className={styles.card}
               >
-                <Card.Img
-                  width={{}}
-                  variant="top"
-                  src="https://acdn-us.mitiendanube.com/stores/915/088/products/sabrina-fw25-ecom0234-1-68a02a4da7ebbbabaf17416259745132-640-0.webp"
-                />
+                <Link to={"/productos"}>
+                  <Card.Img
+                    width={{}}
+                    variant="top"
+                    src="https://acdn-us.mitiendanube.com/stores/915/088/products/sabrina-fw25-ecom0234-1-68a02a4da7ebbbabaf17416259745132-640-0.webp"
+                  />
+                </Link>
                 <Card.Body>
                   <Card.Title style={{ height: "auto", border: "none" }}>
-                    <Link>TAPADO BENITA</Link>
+                    TAPADO BENITA
                   </Card.Title>
                   <Card.Text>$109.990</Card.Text>
                 </Card.Body>
                 <Card.Footer>3 cuotas sin interés de $36.663,33</Card.Footer>
               </Card>
               <Card style={{ marginLeft: "25px" }} className={styles.card}>
-                <Card.Img
-                  variant="top"
-                  src="https://acdn-us.mitiendanube.com/stores/915/088/products/sabrina-fw25-ecom0663-1b1779d8c0cd124d6417416229486652-640-0.webp"
-                />
+                <Link to={"/productos"}>
+                  <Card.Img
+                    variant="top"
+                    src="https://acdn-us.mitiendanube.com/stores/915/088/products/sabrina-fw25-ecom0663-1b1779d8c0cd124d6417416229486652-640-0.webp"
+                  />
+                </Link>
                 <Card.Body>
                   <Card.Title>TAPADO AMATISTA</Card.Title>
                   <Card.Text>$119.990</Card.Text>
@@ -154,10 +158,12 @@ function Home() {
                 <Card.Footer>3 cuotas sin interés de $39.996,67</Card.Footer>
               </Card>
               <Card style={{ marginLeft: "25px" }} className={styles.card}>
-                <Card.Img
-                  variant="top"
-                  src="https://acdn-us.mitiendanube.com/stores/915/088/products/sabrina-fw25-ecom0298-ca4e3ba7dd24206d5217416236722817-640-0.webp"
-                />
+                <Link to={"/productos"}>
+                  <Card.Img
+                    variant="top"
+                    src="https://acdn-us.mitiendanube.com/stores/915/088/products/sabrina-fw25-ecom0298-ca4e3ba7dd24206d5217416236722817-640-0.webp"
+                  />
+                </Link>
                 <Card.Body>
                   <Card.Title>TAPADO HELEN</Card.Title>
                   <Card.Text>$99.990 $79.990</Card.Text>

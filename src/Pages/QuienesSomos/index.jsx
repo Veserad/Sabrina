@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
+import styles from "../Locales/padding.module.css";
 function QuienesSomos() {
   return (
-    <div>
+    <div className={styles.paddingMobile}>
       <div>
         <p style={{ fontSize: "20px" }}>
           <Link>Inicio</Link> /{" "}
