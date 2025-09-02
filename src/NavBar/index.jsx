@@ -42,22 +42,26 @@ function NavBar() {
         </Link>
       </div>
       <div className="menu-mobile">
-        <h1>S A B R I N A</h1>
-        <Button
-          variant=""
-          className="boton-carrito"
-          onClick={() => setShowFirst(true)}
-        >
-          <MdOutlineShoppingCart size={25} />
-        </Button>
-        <Button
-          variant="none"
-          className="me-2"
-          onClick={() => setShowSecond(true)}
-        >
-          <MdOutlineMenu size={25} />
-          MENÚ
-        </Button>
+        <h1>
+          <Link to={"/"}>S A B R I N A</Link>
+        </h1>
+        <div className="menu-mobile-buttons">
+          <Button
+            variant=""
+            className="boton-carrito"
+            onClick={() => setShowFirst(true)}
+          >
+            <MdOutlineShoppingCart size={25} />
+          </Button>
+          <Button
+            variant="none"
+            className="me-2"
+            onClick={() => setShowSecond(true)}
+          >
+            <MdOutlineMenu size={25} />
+            MENÚ
+          </Button>
+        </div>
 
         <OffCanvas
           show={showFirst}

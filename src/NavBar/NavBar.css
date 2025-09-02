@@ -187,6 +187,10 @@
   }
   .menu-mobile {
     display: flex;
+    justify-content: space-between;
+  }
+  .menu-mobile-buttons{
+    display: flex;
   }
   .me-2 {
     display: flex;
